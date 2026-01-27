@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "noop",
+			"type": "shell",
+			"command": "echo CSS changes will be applied via file edits.",
+			"isBackground": false
+		},
+		{
+			"label": "noop",
+			"type": "shell",
+			"command": "echo Now editing CSS blocks to shrink image width, reduce gap, and keep title single-line.",
+			"isBackground": false
+		},
+		{
+			"label": "note",
+			"type": "shell",
+			"command": "echo Editing HTML and CSS to add hero description and styles.",
+			"isBackground": false
+		},
+		{
+			"label": "note2",
+			"type": "shell",
+			"command": "echo Proceeding with HTML + CSS edits without further terminal use.",
+			"isBackground": false
+		}
+	]
+}

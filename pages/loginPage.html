@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Global styles shared across all pages -->
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Login page specific styles -->
+    <link rel="stylesheet" href="../loginPage.css" />
+    <!-- Font Awesome icons for social buttons, eye toggle, etc. -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMart - Login</title>
+  </head>
+  <body>
+    <!-- ============================================
+         NAVIGATION BAR
+         ============================================
+         Top navigation with logo, menu links, and cart/hamburger icons.
+         Shared component across all pages.
+         ============================================ -->
+    <div class="container">
+      <!-- Logo Section -->
+      <div class="rectangle-container">
+        <div class="text">
+          <p>ECO-MART<i class="fa-solid fa-leaf"></i></p>
+        </div>
+      </div>
+      <!-- Navigation Links -->
+      <div class="navbar-container">
+        <div class="ul-tags">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">RESEARCH</a></li>
+            <li><a href="aboutUsPage.html">ABOUT US</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Cart and Mobile Menu Icons -->
+      <div class="cart-bar-container">
+        <div class="cart-bars">
+          <i id="cart" class="fa-solid fa-cart-shopping"></i>
+          <i id="hamburger" class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         LOGIN/SIGNUP SECTION
+         ============================================
+         Dual-panel layout with sliding animation.
+         - Left Panel: Sign In form (default) / Welcome Back message (signup mode)
+         - Right Panel: Hey There message (default) / Sign Up form (signup mode)
+         
+         The .signup-mode class toggles between states.
+         ============================================ -->
+    <div class="login-wrapper">
+      <div class="login-container" id="loginContainer">
+        <!-- ==========================================
+             LEFT PANEL
+             ==========================================
+             Contains: Sign In form (visible by default)
+                       Welcome Back message (visible in signup mode)
+             ========================================== -->
+        <div class="login-left">
+          <!-- SIGN IN FORM - Visible by default -->
+          <div class="form-content" id="signinForm">
+            <div class="login-form-container">
+              <h1>Sign In</h1>
+
+              <!-- Social Login Options -->
+              <div class="social-login">
+                <button type="button" class="social-btn" title="Google">
+                  <i class="fab fa-google"></i>
+                </button>
+                <button type="button" class="social-btn" title="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+                <button type="button" class="social-btn" title="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </button>
+              </div>
+
+              <p class="divider-text">or use your account</p>
+
+              <!-- Email/Password Login Form -->
+              <form class="login-form">
+                <div class="form-group">
+                  <input type="email" placeholder="Email Address" required />
+                </div>
+                <div class="form-group">
+                  <!-- Password field with show/hide toggle -->
+                  <div class="password-input-wrapper">
+                    <input type="password" placeholder="Password" required />
+                    <span class="password-toggle">
+                      <i class="fas fa-eye"></i>
+                    </span>
+                  </div>
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="remember" />
+                    <label for="remember">Please fill in the form</label>
+                  </div>
+                </div>
+                <a href="#" class="forgot-password">I forgot my password</a>
+                <button type="submit" class="signin-btn">SIGN IN</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- WELCOME BACK MESSAGE - Visible in signup mode -->
+          <div class="welcome-content hidden" id="welcomeBack">
+            <div class="welcome-box">
+              <h2>Welcome Back!</h2>
+              <p>
+                Stay connected by logging in with your credentials and continue
+                your sustainable journey
+              </p>
+              <!-- Button to switch back to Sign In -->
+              <button type="button" class="toggle-btn" id="toSigninBtn">
+                Sign In+
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             RIGHT PANEL
+             ==========================================
+             Contains: Hey There message (visible by default)
+                       Sign Up form (visible in signup mode)
+             ========================================== -->
+        <div class="login-right">
+          
+          <!-- HEY THERE MESSAGE - Visible by default -->
+          <div class="welcome-content" id="heyThere">
+            <div class="welcome-box">
+              <h2>Hey There!</h2>
+              <p>
+                Begin your path to sustainable living by creating an account
+                with EcoMart on here.
+              </p>
+              <!-- Button to switch to Sign Up -->
+              <button type="button" class="toggle-btn" id="toSignupBtn">
+                Sign up
+              </button>
+            </div>
+          </div>
+
+          <!-- SIGN UP FORM - Visible in signup mode -->
+          <div class="form-content hidden" id="signupForm">
+            <div class="signup-form-container">
+              <h1>Create Account</h1>
+              
+              <!-- Social Signup Options -->
+              <div class="social-login">
+                <button type="button" class="social-btn" title="Google">
+                  <i class="fab fa-google"></i>
+                </button>
+                <button type="button" class="social-btn" title="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+                <button type="button" class="social-btn" title="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </button>
+              </div>
+              
+              <p class="divider-text">or register with email</p>
+              
+              <!-- Registration Form -->
+              <form class="signup-form">
+                <div class="form-group">
+                  <input type="text" placeholder="Full Name" required />
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="Email Address" required />
+                </div>
+                <div class="form-group">
+                  <!-- Password field with show/hide toggle -->
+                  <div class="password-input-wrapper">
+                    <input type="password" placeholder="Password" required />
+                    <span class="password-toggle">
+                      <i class="fas fa-eye"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="password-input-wrapper">
+                    <input
+                      type="password"
+                      placeholder="Confirm Password"
+                      required
+                    />
+                    <span class="password-toggle">
+                      <i class="fas fa-eye"></i>
+                    </span>
+                  </div>
+                </div>
+                <button type="submit" class="signup-submit-btn">SIGN UP</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginContainer = document.getElementById("loginContainer");
+        const toSignupBtn = document.getElementById("toSignupBtn");
+        const toSigninBtn = document.getElementById("toSigninBtn");
+
+        const signinForm = document.getElementById("signinForm");
+        const signupForm = document.getElementById("signupForm");
+        const heyThere = document.getElementById("heyThere");
+        const welcomeBack = document.getElementById("welcomeBack");
+
+        // Switch to Sign Up
+        toSignupBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          loginContainer.classList.add("signup-mode");
+
+          // Fade out current content
+          signinForm.classList.add("hidden");
+          heyThere.classList.add("hidden");
+
+          // Fade in new content after color transition starts
+          setTimeout(() => {
+            signupForm.classList.remove("hidden");
+            welcomeBack.classList.remove("hidden");
+          }, 150);
+        });
+
+        // Switch to Sign In
+        toSigninBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          loginContainer.classList.remove("signup-mode");
+
+          // Fade out current content
+          signupForm.classList.add("hidden");
+          welcomeBack.classList.add("hidden");
+
+          // Fade in new content after color transition starts
+          setTimeout(() => {
+            signinForm.classList.remove("hidden");
+            heyThere.classList.remove("hidden");
+          }, 150);
+        });
+
+        // Password toggle functionality
+        const passwordToggles = document.querySelectorAll(".password-toggle");
+        passwordToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function () {
+            const input = this.parentElement.querySelector("input");
+            const icon = this.querySelector("i");
+
+            if (input.type === "password") {
+              input.type = "text";
+              icon.classList.remove("fa-eye");
+              icon.classList.add("fa-eye-slash");
+            } else {
+              input.type = "password";
+              icon.classList.remove("fa-eye-slash");
+              icon.classList.add("fa-eye");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

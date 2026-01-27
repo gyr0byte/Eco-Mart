@@ -1,0 +1,503 @@
+/*
+ * ============================================
+ * EcoMart Login/Signup Page Styles
+ * ============================================
+ * This stylesheet controls the appearance of the login and signup forms.
+ * 
+ * KEY FEATURES:
+ * - Dual-panel layout (Sign In / Sign Up)
+ * - Sliding animation between panels using CSS transforms
+ * - Pseudo-elements (::before, ::after) create the sliding color backgrounds
+ * - Responsive design for mobile devices
+ * 
+ * COLOR SCHEME:
+ * - Primary Green: #7a8f7e
+ * - Dark Green: #5a6f5e  
+ * - Off-white: #fafaf8
+ * - Text Dark: #2d3d34
+ * 
+ * ANIMATION:
+ * - Panels slide using translateX() transforms
+ * - Transition duration: 0.6s with cubic-bezier easing
+ * ============================================
+ */
+
+/* ==========================================
+   IMPORTS & FONTS
+   ========================================== */
+@import url(/styles.css);
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+/* Custom font for brand identity */
+@font-face {
+  font-family: "Ramabhadra";
+  src: url("../fonts/Ramabhadra-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ==========================================
+   CSS RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   LOGIN WRAPPER & CONTAINER
+   ==========================================
+   The wrapper centers the login container on the page.
+   The container holds both left and right panels.
+   ========================================== */
+
+/* Main wrapper - centers content vertically and horizontally */
+.login-wrapper {
+  display: flex;
+  height: calc(100vh - 60px);
+  width: 100%;
+  background: linear-gradient(135deg, #e8f5e9 0%, #d4edda 100%);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Main container - holds both panels side by side */
+.login-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* ==========================================
+   SLIDING BACKGROUND ANIMATION
+   ==========================================
+   The sliding effect is achieved using ::before and ::after pseudo-elements.
+   - ::before = White/off-white panel (starts on left)
+   - ::after = Green gradient panel (starts on right)
+   
+   When .signup-mode class is added:
+   - ::before slides RIGHT (translateX 100%)
+   - ::after slides LEFT (translateX -100%)
+   This creates the illusion of panels swapping positions.
+   ========================================== */
+
+/* Base styles for both sliding background panels */
+.login-container::before,
+.login-container::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+/* Left panel background - white/off-white (Sign In form background) */
+.login-container::before {
+  left: 0;
+  background-color: #fafaf8;
+}
+
+/* Right panel background - green gradient (Welcome message background) */
+.login-container::after {
+  right: 0;
+  background: linear-gradient(135deg, #7a8f7e 0%, #5a6f5e 100%);
+}
+
+/* SIGNUP MODE: Slide panels to opposite sides */
+.login-container.signup-mode::before {
+  transform: translateX(100%); /* Slide white panel to right */
+}
+
+.login-container.signup-mode::after {
+  transform: translateX(-100%); /* Slide green panel to left */
+}
+
+/* ==========================================
+   LEFT & RIGHT PANELS
+   ==========================================
+   These are the actual content containers that hold forms and welcome messages.
+   They don't move - only the background pseudo-elements slide.
+   z-index: 1 ensures content appears above the sliding backgrounds.
+   ========================================== */
+.login-left,
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   CONTENT VISIBILITY TOGGLING
+   ==========================================
+   Forms and welcome messages fade in/out using opacity transitions.
+   The .hidden class makes content invisible and non-interactive.
+   ========================================== */
+.form-content,
+.welcome-content {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Hidden state - invisible and non-clickable */
+.form-content.hidden,
+.welcome-content.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* ==========================================
+   FORM CONTAINER STYLES
+   ==========================================
+   Styles for the Sign In and Sign Up form containers.
+   Both share similar styling for consistency.
+   ========================================== */
+.login-form-container,
+.signup-form-container {
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Form headings - "Sign In" and "Create Account" */
+.login-form-container h1,
+.signup-form-container h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d3d34;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* ==========================================
+   SOCIAL LOGIN BUTTONS
+   ==========================================
+   Google, Facebook, LinkedIn login options.
+   ========================================== */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Individual social button - circular design */
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn:hover {
+  border-color: #7a8f7e;
+  color: #7a8f7e;
+  transform: scale(1.05);
+}
+
+/* Divider text - "or use your account" */
+.divider-text {
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   FORM LAYOUT
+   ==========================================
+   Flexbox layout for form fields with consistent spacing.
+   ========================================== */
+.login-form,
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual form field group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ==========================================
+   INPUT FIELD STYLES
+   ==========================================
+   Styled input fields with focus states.
+   ========================================== */
+.form-group input {
+  padding: 12px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  background-color: white;
+  color: #333;
+}
+
+/* Input focus state - green border highlight */
+.form-group input:focus {
+  outline: none;
+  border-color: #7a8f7e;
+  background-color: white;
+}
+
+/* ==========================================
+   PASSWORD FIELD WITH TOGGLE
+   ==========================================
+   Password input with show/hide eye icon.
+   ========================================== */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Eye icon to toggle password visibility */
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  color: #999;
+  font-size: 16px;
+}
+
+.password-toggle:hover {
+  color: #7a8f7e;
+}
+
+/* ==========================================
+   CHECKBOX GROUP
+   ==========================================
+   Remember me checkbox styling.
+   ========================================== */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #7a8f7e; /* Green checkmark color */
+}
+
+.checkbox-group label {
+  cursor: pointer;
+  color: #666;
+}
+
+/* ==========================================
+   FORGOT PASSWORD LINK
+   ========================================== */
+.forgot-password {
+  text-decoration: none;
+  color: #7a8f7e;
+  font-size: 12px;
+  transition: color 0.3s ease;
+  text-align: right;
+  display: block;
+  margin-top: 5px;
+  margin-right: 30px;
+}
+
+.forgot-password:hover {
+  color: #5a6f5e;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   SUBMIT BUTTONS
+   ==========================================
+   Sign In and Sign Up button styles.
+   Green gradient with hover lift effect.
+   ========================================== */
+.signin-btn,
+.signup-submit-btn {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #7a8f7e 0%, #5a6f5e 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+/* Button hover - slight lift with shadow */
+.signin-btn:hover,
+.signup-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(122, 143, 126, 0.3);
+}
+
+/* Welcome Section Styling */
+/* ==========================================
+   WELCOME SECTION (Green Panel)
+   ==========================================
+   Displays on the green background panel.
+   Contains welcome message and toggle button.
+   ========================================== */
+.welcome-box {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  max-width: 300px;
+}
+
+.welcome-box h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.welcome-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+}
+
+/* ==========================================
+   TOGGLE BUTTON
+   ==========================================
+   "Sign In" / "Sign Up" button on green panel.
+   Transparent with white border, fills white on hover.
+   ========================================== */
+.toggle-btn {
+  padding: 12px 35px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.toggle-btn:hover {
+  background-color: white;
+  color: #7a8f7e;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   DECORATIVE FLOATING ANIMATION
+   ==========================================
+   Creates a subtle floating circle effect on the green panel.
+   Adds visual interest without distracting from content.
+   ========================================== */
+.login-right::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ==========================================
+   Mobile breakpoint at 768px.
+   - Panels stack vertically instead of side-by-side
+   - Animation changes from horizontal to vertical slide
+   - Navigation links hidden (hamburger menu used instead)
+   ========================================== */
+@media (max-width: 768px) {
+  /* Stack panels vertically */
+  .login-container {
+    flex-direction: column;
+    height: auto;
+    max-height: 90vh;
+  }
+
+  /* Background panels become horizontal layers */
+  .login-container::before,
+  .login-container::after {
+    width: 100%;
+    height: 50%;
+  }
+
+  .login-container::before {
+    top: 0;
+  }
+
+  .login-container::after {
+    top: 50%;
+  }
+
+  /* Vertical slide animation for mobile */
+  .login-container.signup-mode::before {
+    transform: translateY(100%);
+  }
+
+  .login-container.signup-mode::after {
+    transform: translateY(-100%);
+  }
+
+  /* Hide navigation links on mobile */
+  .ul-tags {
+    display: none;
+  }
+}
