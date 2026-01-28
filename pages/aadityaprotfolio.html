@@ -1,243 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aaditya | Blog Page Developer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-    
-    @font-face {
-      font-family: "Ramabhadra";
-      src: url("../fonts/Ramabhadra-Regular.ttf") format("truetype");
-      font-weight: 400;
-      font-style: normal;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Lato', sans-serif;
-      height: 100vh;
-      overflow: hidden;
-    }
-    
-    .portfolio-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      height: 100vh;
-    }
-    
-    /* Left Side - Content */
-    .left-side {
-      background-color: #fafaf8;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 100px;
-      position: relative;
-    }
-    
-    .back-link {
-      position: absolute;
-      top: 40px;
-      left: 80px;
-      text-decoration: none;
-      color: #2d3d34;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 0.3s ease;
-    }
-    
-    .back-link:hover {
-      color: #0f663d;
-    }
-    
-    .greeting {
-      font-family: 'Lato', sans-serif;
-      font-size: 1.1rem;
-      color: #5a5a5a;
-      margin-bottom: 10px;
-      font-weight: 300;
-    }
-    
-    .name {
-      font-family: 'Ramabhadra', sans-serif;
-      font-size: 4.5rem;
-      color: #2d3d34;
-      font-weight: 400;
-      line-height: 1.1;
-      margin-bottom: 15px;
-    }
-    
-    .role {
-      font-family: 'Lato', sans-serif;
-      font-size: 1.2rem;
-      color: #7a8f7e;
-      margin-bottom: 40px;
-      font-weight: 400;
-    }
-    
-    .description {
-      font-family: 'Lato', sans-serif;
-      font-size: 1rem;
-      color: #5a5a5a;
-      line-height: 1.8;
-      margin-bottom: 50px;
-      max-width: 500px;
-      font-weight: 300;
-    }
-    
-    .social-icons {
-      display: flex;
-      gap: 20px;
-    }
-    
-    .social-icons a {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #2d3d34;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fafaf8;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .social-icons a:hover {
-      background-color: #0f663d;
-      transform: translateY(-3px);
-    }
-    
-    /* Right Side - Image */
-    .right-side {
-      background: linear-gradient(135deg, #7a8f7e 0%, #5a6f5e 100%);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .right-side::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -50%;
-      width: 100%;
-      height: 100%;
-      background: #fafaf8;
-      transform: skewX(-15deg);
-      transform-origin: top left;
-    }
-    
-    .profile-image {
-      position: relative;
-      z-index: 1;
-      max-width: 500px;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-    
-    /* Responsive */
-    @media (max-width: 968px) {
-      .portfolio-container {
-        grid-template-columns: 1fr;
-        height: auto;
-        overflow-y: auto;
-      }
-      
-      .left-side {
-        padding: 60px 40px;
-        min-height: 100vh;
-      }
-      
-      .back-link {
-        left: 40px;
-        top: 30px;
-      }
-      
-      .name {
-        font-size: 3rem;
-      }
-      
-      .right-side {
-        min-height: 400px;
-      }
-      
-      .right-side::before {
-        display: none;
-      }
-    }
-    
-    @media (max-width: 576px) {
-      .left-side {
-        padding: 50px 30px;
-      }
-      
-      .name {
-        font-size: 2.5rem;
-      }
-      
-      .role {
-        font-size: 1rem;
-      }
-      
-      .social-icons a {
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaditya | Blog Page Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+        @font-face {
+            font-family: "Ramabhadra";
+            src: url("../fonts/Ramabhadra-Regular.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .portfolio-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100vh;
+        }
+
+        /* Left Side - Content */
+        .left-side {
+            background-color: #fafaf8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 100px;
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 40px;
+            left: 80px;
+            text-decoration: none;
+            color: #2d3d34;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #0f663d;
+        }
+
+        .greeting {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            color: #5a5a5a;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .name {
+            font-family: 'Ramabhadra', sans-serif;
+            font-size: 4.5rem;
+            color: #2d3d34;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .role {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.2rem;
+            color: #7a8f7e;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .description {
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            color: #5a5a5a;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            max-width: 500px;
+            font-weight: 300;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #2d3d34;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fafaf8;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #0f663d;
+            transform: translateY(-3px);
+        }
+
+        /* Right Side - Image */
+        .right-side {
+            background: linear-gradient(135deg, #7a8f7e 0%, #5a6f5e 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .right-side::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: #fafaf8;
+            transform: skewX(-15deg);
+            transform-origin: top left;
+        }
+
+        .profile-image {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .portfolio-container {
+                grid-template-columns: 1fr;
+                height: auto;
+                overflow-y: auto;
+            }
+
+            .left-side {
+                padding: 60px 40px;
+                min-height: 100vh;
+            }
+
+            .back-link {
+                left: 40px;
+                top: 30px;
+            }
+
+            .name {
+                font-size: 3rem;
+            }
+
+            .right-side {
+                min-height: 400px;
+            }
+
+            .right-side::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .left-side {
+                padding: 50px 30px;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .role {
+                font-size: 1rem;
+            }
+
+            .social-icons a {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="portfolio-container">
-    <!-- Left Side - Content -->
-    <div class="left-side">
-      <a href="aboutUsPage.html" class="back-link">
-        <i class="fas fa-arrow-left"></i> Back to Team
-      </a>
-      
-      <div class="greeting">Hi, I am</div>
-      <h1 class="name">Aaditya</h1>
-      <div class="role">Blog Page Developer</div>
-      
-      <p class="description">
-        Creating the blog page, sharing stories about sustainable living and green innovations. 
-        I develop content that engages the eco-community and drives traffic to our platform. 
-        The blog strengthens our mission through compelling narratives, connecting readers with 
-        the environmental movement and practical sustainability tips.
-      </p>
-      
-      <div class="social-icons">
-        <a href="#" aria-label="Email" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="#" aria-label="GitHub" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="#" aria-label="LinkedIn" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </div>
+    <div class="portfolio-container">
+        <!-- Left Side - Content -->
+        <div class="left-side">
+            <a href="aboutUsPage.html#team" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Team
+            </a>
+
+            <div class="greeting">Hi, I am</div>
+            <h1 class="name">Aaditya</h1>
+            <div class="role">Blog Page Developer</div>
+
+            <p class="description">
+                Creating the blog page, sharing stories about sustainable living and green innovations.
+                I develop content that engages the eco-community and drives traffic to our platform.
+                The blog strengthens our mission through compelling narratives, connecting readers with
+                the environmental movement and practical sustainability tips.
+            </p>
+
+            <div class="social-icons">
+                <a href="#" aria-label="Email" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" aria-label="GitHub" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Side - Image -->
+        <div class="right-side">
+            <img src="../images/aaditya.png" alt="Aaditya" class="profile-image">
+        </div>
     </div>
-    
-    <!-- Right Side - Image -->
-    <div class="right-side">
-      <img src="../images/aaditya.png" alt="Aaditya" class="profile-image">
-    </div>
-  </div>
 </body>
+
 </html>
