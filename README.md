@@ -45,19 +45,35 @@ python -m http.server 8000
 
 ## 🧭 Project structure
 
-- pages/
-  - homePage.html
-  - productPage.html
-  - blogPage.html
-  - aboutUsPage.html
-  - researchPage.html
-  - loginPage.html
-- images/ — UI images and assets
-- fonts/ — custom fonts used in styles
-- styles.css — main stylesheet
-- scripts.js — small interactive behaviors
-- aboutUsPage.css — page-specific CSS
-- loginPage.css — page-specific CSS
+- **pages/** — All main and team/portfolio HTML pages
+  - homePage.html — Homepage (empty placeholder)
+  - productPage.html — Product listing and details
+  - blogPage.html — Blog UI/filter demo
+  - aboutUsPage.html — About the team and mission
+  - researchPage.html — Research (empty placeholder)
+  - loginPage.html — Login/signup UI
+  - aadityaprotfolio.html — Portfolio: Aaditya (Blog Page Developer)
+  - gauravprotfolio.html — Portfolio: Gaurav (Lead Developer)
+  - girishprotfolio.html — Portfolio: Girish (UI/UX Designer)
+  - johnprotfolio.html — Portfolio: John (Research Page Developer)
+  - prafulprotfolio.html — Portfolio: Praful (Homepage Developer)
+- **images/** — UI images and team member avatars
+- **fonts/** — Custom and decorative fonts used in styles
+- **styles.css** — Main global stylesheet
+- **aboutUsPage.css** — About Us page-specific CSS
+- **loginPage.css** — Login page-specific CSS
+- **aboutUsPage.js** — JS for About Us page (form validation)
+- **scripts.js** — (Currently empty) Placeholder for global JS behaviors
+- **.vscode/** — VS Code workspace settings and tasks
+  - settings.json — Editor/workspace settings
+  - tasks.json — Predefined shell tasks for development
+- **.git/** — Git version control metadata
+
+## 📁 Other notes
+
+- Some HTML files (e.g., homePage.html, researchPage.html) are empty placeholders for future content.
+- Portfolio pages highlight individual team members and their roles.
+- The project is static and does not require a backend.
 
 ## 🎨 Customization tips
 
