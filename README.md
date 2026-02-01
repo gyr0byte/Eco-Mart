@@ -203,35 +203,7 @@ Eco-Mart/
 
 ---
 
-## 📸 Screenshots
-
-> **Note:** Add screenshots of your project here to showcase:
->
-> - Homepage
-> - Product listing page
-> - Product details page
-> - Shopping cart
-> - Blog section
-
-Example:
-
-```markdown
-### Homepage
-
-![Homepage Screenshot](screenshots/homepage.png)
-
-### Product Page
-
-![Product Page Screenshot](screenshots/products.png)
-
-### Shopping Cart
-
-![Cart Screenshot](screenshots/cart.png)
-```
-
----
-
-## 🔮 Future Enhancements
+## Future Enhancements
 
 We have exciting plans to improve Eco-Mart further:
 
