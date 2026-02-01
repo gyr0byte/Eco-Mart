@@ -300,27 +300,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 👥 Authors & Contact
-
-This project was developed as a collaborative college project by:
-
-### Team Members
-
-- **[Your Name]** - _Project Lead & Frontend Developer_
-  - 📧 Email: your.email@example.com
-  - 🔗 LinkedIn: [Your LinkedIn Profile](#)
-  - 💼 GitHub: [@yourusername](https://github.com/yourusername)
-
-- **[Team Member 2]** - _Frontend Developer_
-  - 📧 Email: member2@example.com
-
-- **[Team Member 3]** - _UI/UX Designer_
-  - 📧 Email: member3@example.com
-
-> _Feel free to reach out for questions, feedback, or collaboration opportunities!_
-
----
-
 ## 🌟 Acknowledgments
 
 - Thanks to all contributors who helped shape this project
