@@ -31,12 +31,14 @@ body {
 
 section {
   overflow: hidden;
+  
 }
 
 #landing-page-one {
   position: relative;
-  background-color: #e9f7ea;
   min-height: 1000px;
+  background-color: #e5fae8;
+
 }
 
 .productPage {
@@ -243,7 +245,8 @@ section {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #e9f7ea;
+  background-color: #e5fae8;
+
 
   position: relative;
   padding: 5% 2%;
@@ -288,7 +291,6 @@ section {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 /* faq page accordian */
 
 .accordion-container {
@@ -310,22 +312,20 @@ section {
   width: 20%;
   display: flex;
   gap: 10rem;
-
 }
-.accordion-label i{
+.accordion-label i {
   justify-self: flex-end;
 }
 .accordion-container li {
   list-style: none;
   margin-top: 0.5%;
   width: 20%;
-
 }
 .accordion-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-    width: 600px;
+  width: 600px;
   gap: 1rem;
 }
 .accordion-container label {
@@ -333,10 +333,8 @@ section {
   font-size: 20px;
   cursor: pointer;
 
-  flex: 1;              /* allow text to take space */
- 
+  flex: 1; /* allow text to take space */
 }
-
 
 .accordion-container input {
   display: none;
@@ -352,9 +350,8 @@ section {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s;
-   white-space: normal; 
+  white-space: normal;
   width: 600px;
-  
 }
 
 .accordion li.active .content {
@@ -543,15 +540,13 @@ section {
     gap: 15px;
   }
 }
-
 /* MEDIA QUERY */
 
-@media (max-width:1640px){
+@media (max-width: 1640px) {
   .accordion-container {
- 
-  margin-left: 0rem;
-  top: 0rem;
-}
+    margin-left: 0rem;
+    top: 0rem;
+  }
 }
 
 @media (max-width: 1418px) {

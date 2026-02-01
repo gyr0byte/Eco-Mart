@@ -793,15 +793,15 @@ body::-webkit-scrollbar {
   }
 }
 
-@media (max-width: 1404px) {
+@media (max-width: 1404px){
   .hero-product-image {
-    height: auto;
+  height: auto;
 
-  }
+}
 
-  .hero-wrapper {
+.hero-wrapper {
 
-    flex-direction: column;
-
-  }
+  flex-direction: column;
+ 
+}
 }

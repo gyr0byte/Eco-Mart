@@ -1,292 +1,293 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="/components/navbar.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMART Blog</title>
 
-<head>
-  <link rel="stylesheet" href="/components/navbar.css">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoMART Blog</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
-    }
+      :root {
+        --bg: #eef6ea;
+        --green: #4b6f44;
+        --dark: #1f2933;
+        --white: #ffffff;
+      }
+header{
+    height: 100px;
+}
+      body {
+        color: var(--dark);
+        background: var(--white);
+      }
 
-    :root {
-      --bg: #eef6ea;
-      --green: #4b6f44;
-      --dark: #1f2933;
-      --white: #ffffff;
-    }
+      /* SCROLLBAR */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
 
-    header {
-      height: 100px;
-    }
+      ::-webkit-scrollbar-track {
+        background: #e8f3e3;
+      }
 
-    body {
-      color: var(--dark);
-      background: var(--white);
-    }
+      ::-webkit-scrollbar-thumb {
+        background: var(--green);
+        border-radius: 10px;
+      }
 
-    /* SCROLLBAR */
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #e8f3e3;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--green);
-      border-radius: 10px;
-    }
-
-    /* MAIN LAYOUT */
-    .main-blog {
-      margin: 0 auto;
-      padding: 80px 10px 40px 100px;
-      display: grid;
-      grid-template-columns: 4fr 1fr;
-      gap: 40px;
-    }
-
-    .content {
-      padding-right: 40px;
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
-    }
-
-    .title {
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .divider {
-      border-top: 1px solid rgba(0, 0, 0, 0.3);
-      margin-top: 100px;
-      margin-bottom: 80px;
-    }
-
-    p {
-      font-size: 15px;
-      line-height: 1.8;
-      margin-bottom: 22px;
-    }
-
-    .dropcap::first-letter {
-      font-size: 56px;
-      font-weight: bold;
-      float: left;
-      margin-right: 10px;
-      line-height: 1;
-    }
-
-    h3 {
-      margin: 40px 0 15px;
-      font-size: 18px;
-      letter-spacing: 1px;
-    }
-
-    /* SIDEBAR */
-    .sidebar h4 {
-      font-size: 13px;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-      color: #555;
-    }
-
-    .sidebar p {
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    .sidebar a {
-      text-decoration: none;
-      color: var(--green);
-      font-size: 14px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--green);
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 13px;
-    }
-
-    /*  MOBILE (≤600px) */
-
-    @media (max-width: 600px) {
-
-
-
+      /* MAIN LAYOUT */
       .main-blog {
-        padding: 30px 20px 60px;
-        grid-template-columns: 1fr;
+        margin: 0 auto;
+        padding: 80px 10px 40px 100px;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
         gap: 40px;
       }
 
       .content {
-        padding-right: 0;
-        border-right: none;
+        padding-right: 40px;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      .title {
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .divider {
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        margin-top: 100px;
+        margin-bottom: 80px;
       }
 
       p {
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 22px;
       }
 
       .dropcap::first-letter {
-        font-size: 42px;
-      }
-    }
-
-    /*  TABLET (≤900px) */
-
-    @media (max-width: 900px) {
-      .main-blog {
-        grid-template-columns: 1fr;
+        font-size: 56px;
+        font-weight: bold;
+        float: left;
+        margin-right: 10px;
+        line-height: 1;
       }
 
-      .content {
-        border-right: none;
-        padding-right: 0;
-      }
-    }
-
-    /*  LARGE SCREENS (≥1400px) */
-
-    @media (min-width: 1400px) {
-      .main-blog {
-        max-width: 1500px;
+      h3 {
+        margin: 40px 0 15px;
+        font-size: 18px;
+        letter-spacing: 1px;
       }
 
-      p {
-        font-size: 16px;
+      /* SIDEBAR */
+      .sidebar h4 {
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        color: #555;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <!-- NAVBAR  -->
-  <header class="site-header">
-    <div id="navbar">
-      <script>
-        fetch("/components/navbar.html")
-          .then((res) => res.text())
-          .then((html) => {
-            document.getElementById("navbar").innerHTML = html;
-            document.querySelector(".openFilter-button")?.remove();
-            document.querySelector(".search-bar-container")?.remove();
-          });
-      </script>
-    </div>
-  </header>
-  <!-- BLOG DETAIL -->
-  <main class="main-blog">
-    <article class="content">
-      <h1 class="title" style="font-size: 40px">
-        The Positive Impact of Technology: Engineering a Sustainable Future
-      </h1>
-      <a href="#" style="text-decoration: none; color: var(--green)">
-        <i>Written by </i></a>
-      <a href="#" style="text-decoration: none; color: #726e6d"><b>Aditya Thapaliya</b></a>
-      <div class="divider"></div>
+      .sidebar p {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
 
-      <img
-        src="https://media.istockphoto.com/id/1567731426/photo/waste-management-sorting-facility-worker.jpg?s=612x612&w=0&k=20&c=jvoA4Ijd2Y1u0QryLCQYyX0GpG4jClMpvkWFcFQHMis="
-        alt="" style="
+      .sidebar a {
+        text-decoration: none;
+        color: var(--green);
+        font-size: 14px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--green);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 13px;
+      }
+
+      /*  MOBILE (≤600px) */
+
+      @media (max-width: 600px) {
+     
+
+
+        .main-blog {
+          padding: 30px 20px 60px;
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .content {
+          padding-right: 0;
+          border-right: none;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .dropcap::first-letter {
+          font-size: 42px;
+        }
+      }
+
+      /*  TABLET (≤900px) */
+
+      @media (max-width: 900px) {
+        .main-blog {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          border-right: none;
+          padding-right: 0;
+        }
+      }
+
+      /*  LARGE SCREENS (≥1400px) */
+
+      @media (min-width: 1400px) {
+        .main-blog {
+          max-width: 1500px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR  -->
+    <header class="site-header">
+      <div id="navbar">
+        <script>
+          fetch("/components/navbar.html")
+            .then((res) => res.text())
+            .then((html) => {
+              document.getElementById("navbar").innerHTML = html;
+              document.querySelector(".openFilter-button")?.remove();
+              document.querySelector(".search-bar-container")?.remove();
+            });
+        </script>
+      </div>
+    </header>
+    <!-- BLOG DETAIL -->
+    <main class="main-blog">
+      <article class="content">
+        <h1 class="title" style="font-size: 40px">
+          The Positive Impact of Technology: Engineering a Sustainable Future
+        </h1>
+        <a href="#" style="text-decoration: none; color: var(--green)">
+          <i>Written by </i></a
+        >
+        <a href="#" style="text-decoration: none; color: #726e6d"
+          ><b>Aditya Thapaliya</b></a
+        >
+        <div class="divider"></div>
+
+        <img
+          src="https://media.istockphoto.com/id/1567731426/photo/waste-management-sorting-facility-worker.jpg?s=612x612&w=0&k=20&c=jvoA4Ijd2Y1u0QryLCQYyX0GpG4jClMpvkWFcFQHMis="
+          alt=""
+          style="
             width: 100%;
             height: auto;
             display: block;
             margin: 20px auto;
             border-radius: 8px;
-          " />
-      <!-- ARTICLE -->
-      <p class="dropcap">
-        Technology is significant in enabling sustainable lives in terms of
-        efficiency, waste reduction, and enabling people make better use of
-        the resources. When applied intelligently, modern innovations can help
-        in making the environment cleaner, improving the management of energy,
-        and making daily practices smarter to facilitate the maintenance of
-        the environment in the long-term. <br /><br />
-        Energy efficiency is one of the major contributions that technology
-        can make. Smart appliances, lighting fast systems, and
-        energy-monitoring which can assist homes and workplaces to conserve
-        more energy. By reducing unnecessary power consumption, these
-        technologies support responsible energy use and lower overall demand.
-        <br /><br />
-        Renewable energy systems are also growing with the use of technology.
-        Micro-hydro technologies, solar panels, and wind energy solutions are
-        reliable sources of power that require use of natural resources. These
-        systems aid in providing energy requirements and at the same time
-        conserving natural resources to be used by the future generations.
-        <br /><br />
-        Digitization of communication has brought in the use of paper to a
-        considerable low. The daily work is more effective with online
-        documentation, e-mails, electronic payment, and cloud storage cause of
-        it the requirement for physical resources like paper is reduced. This
-        revolution aids in the saving of resources and makes communication
-        easier.
-        <br /><br />
-        Technological innovation has brought efficiency to modern
-        transportation. Electric cars, ride-sharing and route-planning
-        applications help reduce fuel usage and improve travel efficiency. The
-        developments also contribute to cleaner air and a smoother traffic
-        flow in cities.
-        <br /><br />
-        Technology has enabled agriculture to be efficient and sustainable.
-        The weather forecasting application, soil monitoring systems, and
-        modern irrigation techniques are among the tools that can assist
-        farmers in making better decisions. The technologies enhance
-        productivity and at the same time, ensuring careful use of water and
-        land resources.
-        <br /><br />
-        Technological advancement has also helped in the management of waste.
-        Better recycling system, waste tracking, and waste to energy can be
-        used to manage waste better. Such systems favor the cleaner societies
-        and encourage responsible use of materials.
-        <br /><br />
-        Sustainability is also enhanced by the environmental monitoring
-        technologies. The air quality sensor, satellite imagery and data
-        analysis tools can be used to give significant information about
-        environmental conditions. This knowledge assists communities,
-        organizations and policymakers to make informed decisions.
-        <br /><br />
-        In conclusion, technology is an effective device in ensuring
-        sustainable living. Technology can make the future more balanced and
-        sustainable by enabling efficient use of energy, responsible
-        administration of the resources and making choices.
-      </p>
-    </article>
-    <!-- AUTHOR -->
-    <aside class="sidebar">
-      <h4>Aditya Thapaliya</h4>
-      <p>
-        >Aditya Thapaliya (born December 2007) is a student at Itahari
-        International College. He has contributed to the development of the
-        Ecomart project as a Blog Page Designer and Coder, where he was
-        responsible for designing layouts and implementing functional,
-        well-structured code. He has previously worked on several web
-        development projects, gaining valuable experience in website design,
-        coding, and overall web development.
-      </p>
-      <a href="#">learn more</a>
-    </aside>
-  </main>
+          "
+        />
+        <!-- ARTICLE -->
+        <p class="dropcap">
+          Technology is significant in enabling sustainable lives in terms of
+          efficiency, waste reduction, and enabling people make better use of
+          the resources. When applied intelligently, modern innovations can help
+          in making the environment cleaner, improving the management of energy,
+          and making daily practices smarter to facilitate the maintenance of
+          the environment in the long-term. <br /><br />
+          Energy efficiency is one of the major contributions that technology
+          can make. Smart appliances, lighting fast systems, and
+          energy-monitoring which can assist homes and workplaces to conserve
+          more energy. By reducing unnecessary power consumption, these
+          technologies support responsible energy use and lower overall demand.
+          <br /><br />
+          Renewable energy systems are also growing with the use of technology.
+          Micro-hydro technologies, solar panels, and wind energy solutions are
+          reliable sources of power that require use of natural resources. These
+          systems aid in providing energy requirements and at the same time
+          conserving natural resources to be used by the future generations.
+          <br /><br />
+          Digitization of communication has brought in the use of paper to a
+          considerable low. The daily work is more effective with online
+          documentation, e-mails, electronic payment, and cloud storage cause of
+          it the requirement for physical resources like paper is reduced. This
+          revolution aids in the saving of resources and makes communication
+          easier.
+          <br /><br />
+          Technological innovation has brought efficiency to modern
+          transportation. Electric cars, ride-sharing and route-planning
+          applications help reduce fuel usage and improve travel efficiency. The
+          developments also contribute to cleaner air and a smoother traffic
+          flow in cities.
+          <br /><br />
+          Technology has enabled agriculture to be efficient and sustainable.
+          The weather forecasting application, soil monitoring systems, and
+          modern irrigation techniques are among the tools that can assist
+          farmers in making better decisions. The technologies enhance
+          productivity and at the same time, ensuring careful use of water and
+          land resources.
+          <br /><br />
+          Technological advancement has also helped in the management of waste.
+          Better recycling system, waste tracking, and waste to energy can be
+          used to manage waste better. Such systems favor the cleaner societies
+          and encourage responsible use of materials.
+          <br /><br />
+          Sustainability is also enhanced by the environmental monitoring
+          technologies. The air quality sensor, satellite imagery and data
+          analysis tools can be used to give significant information about
+          environmental conditions. This knowledge assists communities,
+          organizations and policymakers to make informed decisions.
+          <br /><br />
+          In conclusion, technology is an effective device in ensuring
+          sustainable living. Technology can make the future more balanced and
+          sustainable by enabling efficient use of energy, responsible
+          administration of the resources and making choices.
+        </p>
+      </article>
+      <!-- AUTHOR -->
+      <aside class="sidebar">
+        <h4>Aditya Thapaliya</h4>
+        <p>
+          >Aditya Thapaliya (born December 2007) is a student at Itahari
+          International College. He has contributed to the development of the
+          Ecomart project as a Blog Page Designer and Coder, where he was
+          responsible for designing layouts and implementing functional,
+          well-structured code. He has previously worked on several web
+          development projects, gaining valuable experience in website design,
+          coding, and overall web development.
+        </p>
+        <a href="#">learn more</a>
+      </aside>
+    </main>
 
-  <!-- FOOTER -->
-  <footer>© 2026 EcoMART</footer>
-  <script type="module" src="/JS/productpage.js"></script>
-</body>
-
+    <!-- FOOTER -->
+    <footer>© 2026 EcoMART</footer>
+    <script type="module" src="/JS/productpage.js"></script>
+  </body>
 </html>

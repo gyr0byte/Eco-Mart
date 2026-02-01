@@ -1,286 +1,287 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="/components/navbar.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*  SMOOTH SCROLL  */
+      html {
+        scroll-behavior: smooth;
+      }
 
-<head>
-  <link rel="stylesheet" href="/components/navbar.css" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <style>
-    /*  SMOOTH SCROLL  */
-    html {
-      scroll-behavior: smooth;
-    }
+      header {
+        height: 100px;
+      }
 
-    header {
-      height: 100px;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
-    }
+      /*  COLORS  */
+      :root {
+        --bg: #eef6ea;
+        --green: #4b6f44;
+        --dark: #1f2933;
+        --white: #ffffff;
+      }
 
-    /*  COLORS  */
-    :root {
-      --bg: #eef6ea;
-      --green: #4b6f44;
-      --dark: #1f2933;
-      --white: #ffffff;
-    }
-
-    /*  BODY  */
-    body {
-      /* background: var(--bg); */
-      color: var(--dark);
-      background: var(--white);
-    }
-
-    /*  CUSTOM SCROLLBAR  */
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #e8f3e3;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #4b6f44;
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #3a5a35;
-    }
-
-    /* BLOG LAYOUT */
-    .Blog_info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 100vh;
-    }
-
-    /* LEFT IMAGE */
-    .blog_img {
-      width: 660px;
-      height: 800px;
-      margin: 0px;
-    }
-
-    /* RIGHT CONTENT */
-    .blog-cnt {
-      padding: 20px 10px;
-    }
-
-    .tag {
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: #4b6f44;
-      font-weight: 600;
-    }
-
-    .blog-cnt h1 {
-      font-size: 32px;
-      line-height: 1.2;
-      margin: 20px 0;
-    }
-
-    p {
-      line-height: 35px;
-    }
-
-    .intro {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 20px;
-      word-spacing: 3px;
-    }
-
-    /*  FOOTER  */
-
-    .footer {
-      text-align: center;
-
-      padding: 30px;
-    }
-
-    /* BIG SCREEN */
-
-    @media (min-width: 1440px) {
+      /*  BODY  */
       body {
-        max-width: 1400px;
-        margin: auto;
+        /* background: var(--bg); */
+        color: var(--dark);
+        background: var(--white);
       }
 
+      /*  CUSTOM SCROLLBAR  */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #e8f3e3;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #4b6f44;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3a5a35;
+      }
+
+      /* BLOG LAYOUT */
       .Blog_info {
+        display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        min-height: 100vh;
       }
 
+      /* LEFT IMAGE */
+      .blog_img {
+        width: 660px;
+        height: 800px;
+        margin: 0px;
+      }
+
+      /* RIGHT CONTENT */
       .blog-cnt {
-        padding: 60px;
+        padding: 20px 10px;
+      }
+
+      .tag {
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: #4b6f44;
+        font-weight: 600;
       }
 
       .blog-cnt h1 {
-        font-size: 40px;
+        font-size: 32px;
+        line-height: 1.2;
+        margin: 20px 0;
       }
 
       p {
-        font-size: 18px;
-        line-height: 38px;
-      }
-    }
-
-    /* MEDIUM SCREEN (TABLETS) */
-
-    @media (max-width: 1024px) {
-      .Blog_info {
-        grid-template-columns: 1fr;
-      }
-
-      .blog_img {
-        width: 100%;
-        height: auto;
-      }
-
-      .blog-cnt {
-        padding: 40px 30px;
-      }
-
-      .blog-cnt h1 {
-        font-size: 28px;
-      }
-    }
-
-    /* SMALL SCREEN (MOBILE) */
-
-    @media (max-width: 768px) {
-
-      /* Navbar */
-      .navbar {
-        flex-direction: column;
-        padding: 15px 20px;
-        text-align: center;
-      }
-
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      nav a {
-        margin: 8px 12px;
-      }
-
-      /* Blog */
-      .Blog_info {
-        grid-template-columns: 1fr;
-      }
-
-      .blog_img {
-        width: 100%;
-        height: auto;
-      }
-
-      .blog-cnt h1 {
-        font-size: 22px;
+        line-height: 35px;
       }
 
       .intro {
-        font-size: 16px;
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 20px;
+        word-spacing: 3px;
       }
 
-      p {
-        line-height: 26px;
-      }
-    }
-  </style>
-</head>
+      /*  FOOTER  */
 
-<body>
-  <!-- NAVBAR  -->
-  <header class="site-header">
-    <div id="navbar">
-      <script>
-        fetch("/components/navbar.html")
-          .then((res) => res.text())
-          .then((html) => {
-            document.getElementById("navbar").innerHTML = html;
-            document.querySelector(".openFilter-button")?.remove();
-            document.querySelector(".search-bar-container")?.remove();
-          });
-      </script>
-    </div>
-  </header>
-  <div style="justify-content: space-between; display: flex">
-    <!-- BLOG DETAIL -->
-    <main class="Blog_info">
-      <div>
-        <img src="https://blogs.ubc.ca/bernardino/files/2013/01/ten-tree-logo1.jpg" alt="Post Image" class="blog_img" />
+      .footer {
+        text-align: center;
+
+        padding: 30px;
+      }
+
+      /* BIG SCREEN */
+
+      @media (min-width: 1440px) {
+        body {
+          max-width: 1400px;
+          margin: auto;
+        }
+
+        .Blog_info {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+
+        .blog-cnt {
+          padding: 60px;
+        }
+
+        .blog-cnt h1 {
+          font-size: 40px;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 38px;
+        }
+      }
+
+      /* MEDIUM SCREEN (TABLETS) */
+
+      @media (max-width: 1024px) {
+        .Blog_info {
+          grid-template-columns: 1fr;
+        }
+
+        .blog_img {
+          width: 100%;
+          height: auto;
+        }
+
+        .blog-cnt {
+          padding: 40px 30px;
+        }
+
+        .blog-cnt h1 {
+          font-size: 28px;
+        }
+      }
+
+      /* SMALL SCREEN (MOBILE) */
+
+      @media (max-width: 768px) {
+        /* Navbar */
+        .navbar {
+          flex-direction: column;
+          padding: 15px 20px;
+          text-align: center;
+        }
+
+        nav {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 10px;
+        }
+
+        nav a {
+          margin: 8px 12px;
+        }
+
+        /* Blog */
+        .Blog_info {
+          grid-template-columns: 1fr;
+        }
+
+        .blog_img {
+          width: 100%;
+          height: auto;
+        }
+
+        .blog-cnt h1 {
+          font-size: 22px;
+        }
+
+        .intro {
+          font-size: 16px;
+        }
+
+        p {
+          line-height: 26px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR  -->
+    <header class="site-header">
+      <div id="navbar">
+        <script>
+          fetch("/components/navbar.html")
+            .then((res) => res.text())
+            .then((html) => {
+              document.getElementById("navbar").innerHTML = html;
+              document.querySelector(".openFilter-button")?.remove();
+              document.querySelector(".search-bar-container")?.remove();
+            });
+        </script>
       </div>
+    </header>
+    <div style="justify-content: space-between; display: flex">
+      <!-- BLOG DETAIL -->
+      <main class="Blog_info">
+        <div>
+          <img
+            src="https://blogs.ubc.ca/bernardino/files/2013/01/ten-tree-logo1.jpg"
+            alt="Post Image"
+            class="blog_img"
+          />
+        </div>
 
-      <!-- RIGHT : ARTICLE -->
-      <section class="blog-cnt">
-        <span class="tag">JOURNAL</span>
+        <!-- RIGHT : ARTICLE -->
+        <section class="blog-cnt">
+          <span class="tag">JOURNAL</span>
 
-        <h1 style="text-align: center">
-          From a Small Startup to 100 Million <br />
-          Trees
-        </h1>
+          <h1 style="text-align: center">
+            From a Small Startup to 100 Million <br />
+            Trees
+          </h1>
 
-        <p class="intro">
-          The 10-Tree Promise Tentree was founded in 2012 by two Canadian
-          friends and established a radical formula of ecommerce: Tentree
-          plants ten trees with every product being purchased. What began as a
-          modest hoodie company has expanded to become a worldwide restoration
-          movement.
-        </p>
+          <p class="intro">
+            The 10-Tree Promise Tentree was founded in 2012 by two Canadian
+            friends and established a radical formula of ecommerce: Tentree
+            plants ten trees with every product being purchased. What began as a
+            modest hoodie company has expanded to become a worldwide restoration
+            movement.
+          </p>
 
-        <p style="margin-bottom: 20px">
-          <b>Green Friday vs. Black Friday</b> Although other stores are
-          promoting over-consumption, Tentree launched a tradition known as
-          Green Friday. They do not simply pursue profits, but instead they
-          take advantage of the peak shopping days to finance immense
-          reforestation, at one point planting 1 million trees on one weekend.
-        </p>
+          <p style="margin-bottom: 20px">
+            <b>Green Friday vs. Black Friday</b> Although other stores are
+            promoting over-consumption, Tentree launched a tradition known as
+            Green Friday. They do not simply pursue profits, but instead they
+            take advantage of the peak shopping days to finance immense
+            reforestation, at one point planting 1 million trees on one weekend.
+          </p>
 
-        <p style="margin-bottom: 20px">
-          <b>E-Commerce Transparency</b> They apply technology in closing the
-          gap between impact and shopping. Each EcoMart-type customer
-          receives: <br />
+          <p style="margin-bottom: 20px">
+            <b>E-Commerce Transparency</b> They apply technology in closing the
+            gap between impact and shopping. Each EcoMart-type customer
+            receives: <br />
 
-          <b>A Trackable Code:</b> Track your specific GPS location on trees
-          in Madagascar or Nepal.
-          <br />
-          <b>A Impact Wallet:</b> See your own forest grow.
-        </p>
+            <b>A Trackable Code:</b> Track your specific GPS location on trees
+            in Madagascar or Nepal.
+            <br />
+            <b>A Impact Wallet:</b> See your own forest grow.
+          </p>
 
-        <p style="margin-bottom: 20px">
-          By providing a credit option through their Reshop program, Tentree
-          will close the Loop by keeping clothing out of landfills and on
-          bodies, resulting in a circular economy.
-        </p>
+          <p style="margin-bottom: 20px">
+            By providing a credit option through their Reshop program, Tentree
+            will close the Loop by keeping clothing out of landfills and on
+            bodies, resulting in a circular economy.
+          </p>
 
-        <p style="margin-bottom: 20px">
-          <b>The Result</b> Tentree has planted more than 105 million trees, a
-          fact that demonstrates that ecommerce can be the major driver of
-          planet recovery. At EcoMart we turn to them as evidence that each
-          purchase can be a restoration tool.
-        </p>
-      </section>
-    </main>
-  </div>
+          <p style="margin-bottom: 20px">
+            <b>The Result</b> Tentree has planted more than 105 million trees, a
+            fact that demonstrates that ecommerce can be the major driver of
+            planet recovery. At EcoMart we turn to them as evidence that each
+            purchase can be a restoration tool.
+          </p>
+        </section>
+      </main>
+    </div>
 
-  <!--  FOOTER  -->
-  <footer class="footer">
-    <p>© 2026 EcoMART | Sustainable Knowledge Hub</p>
-  </footer>
-  <script type="module" src="/JS/productpage.js"></script>
-</body>
-
+    <!--  FOOTER  -->
+    <footer class="footer">
+      <p>© 2026 EcoMART | Sustainable Knowledge Hub</p>
+    </footer>
+    <script type="module" src="/JS/productpage.js"></script>
+  </body>
 </html>

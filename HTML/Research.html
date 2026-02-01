@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UX Research | EcoMart vs EarthHero</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/CSS/Research.css" />
+    <link rel="stylesheet" href="/components/navbar.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
+  </head>
+
+  <body>
+    
+
+    <header class="site-header">
+        <div id="navbar">
+      <script>
+        fetch("/components/navbar.html")
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById("navbar").innerHTML = html;
+                document.querySelector(".openFilter-button")?.remove();
+                document.querySelector(".search-bar-container")?.remove();
+
+          });
+      </script>
+    </div>
+    </header>
+
+    
+    <input type="radio" name="view" id="p1" checked />
+    <input type="radio" name="view" id="p2" />
+    <input type="radio" name="view" id="p3" />
+    <input type="radio" name="view" id="p4" />
+    <input type="radio" name="view" id="p5" />
+
+    <aside class="sidebar">
+
+      <label for="p1" class="nav-label"
+        ><i class="fa-solid fa-house"></i> Home Page</label
+      >
+      <label for="p2" class="nav-label"
+        ><i class="fa-solid fa-cart-shopping"></i> Product Page</label
+      >
+      <label for="p3" class="nav-label"
+        ><i class="fa-solid fa-newspaper"></i> Blog Section</label
+      >
+      <label for="p4" class="nav-label"
+        ><i class="fa-solid fa-users"></i> About Us</label
+      >
+      <label for="p5" class="nav-label"
+        ><i class="fa-solid fa-envelope"></i> Contact Us</label
+      >
+    </aside>
+
+    <main class="workspace">
+      <div class="research-panel" id="content1">
+        <h2>Home Page Benchmarking</h2>
+        <div class="comparison-grid">
+          <div class="image-card">
+            <div class="header-tag">
+              <span>ECOMART (our design)</span>
+            </div>
+            <div class="view-window">
+              <img src="/images/home_our.png" alt="Home My Site" />
+            </div>
+          </div>
+          <div class="image-card">
+            <div class="header-tag">
+              <span>
+                <a
+                  href="https://dribbble.com"
+                  target="_blank"
+                  style="color: black; text-decoration: none"
+                >
+                  dribble (REFERENCE)
+                </a>
+              </span>
+            </div>
+            <div class="view-window">
+              <img src="/images/Home_Ref.jpeg" alt="Home Ref Site" />
+            </div>
+          </div>
+        </div>
+        <table class="audit-table">
+          <tr>
+            <th>Category</th>
+            <th>Similarities</th>
+            <th>Differences</th>
+            <th>Improvements Made</th>
+          </tr>
+          <tr>
+            <td><b> Home Page</b></td>
+            <td>Fonts are similar</td>
+            <td>Our styling and elements differ to match the site theme.</td>
+            <td>
+              The improvement isn't much it's there, we have focused on more of
+              a minimal look, which perfectly match our overall theme and
+              styling
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="research-panel" id="content2">
+        <h2>Product Page Benchmarking</h2>
+        <div class="comparison-grid">
+          <div class="image-card">
+            <div class="header-tag"><span>ECO_MART</span></div>
+            <div class="view-window">
+              <img src="/images/cart_our.jpeg" alt="Product My Site" />
+            </div>
+          </div>
+          <div class="image-card">
+            <div class="header-tag">
+              <span>
+                <a
+                  href="https://dribbble.com"
+                  target="_blank"
+                  style="color: black; text-decoration: none"
+                >
+                  dribble (REFERENCE)
+                </a>
+              </span>
+            </div>
+            <div class="view-window">
+              <img src="/images/cart_reference.png" alt="Product Ref Site" />
+            </div>
+          </div>
+        </div>
+        <table class="audit-table">
+          <tr>
+            <th>Category</th>
+            <th>Similarities</th>
+            <th>Differences</th>
+            <th>Improvements Made</th>
+          </tr>
+          <tr>
+            <td><b>Grid Layout</b></td>
+            <td>Card-based design</td>
+            <td>Reference has no ratings features</td>
+            <td>Added "product rating feature"</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="research-panel" id="p3-content">
+        <h2>Blog Section Benchmarking</h2>
+        <div class="comparison-grid">
+          <div class="image-card">
+            <div class="header-tag">ECO_MART</div>
+            <div class="view-window"><img src="/images/blog_ours.jpeg" /></div>
+          </div>
+          <div class="image-card">
+            <div class="header-tag">
+              <span>
+                <a
+                  href="https://dribbble.com"
+                  target="_blank"
+                  style="color: black; text-decoration: none"
+                >
+                  dribble (REFERENCE)
+                </a>
+              </span>
+            </div>
+            <div class="view-window"><img src="/images/blog_ref.jpeg" /></div>
+          </div>
+        </div>
+        <table class="audit-table">
+          <tr>
+            <th>Category</th>
+            <th>Similarities</th>
+            <th>Differences</th>
+            <th>Improvements Made</th>
+          </tr>
+          <tr>
+            <td><b>Blog Page</b></td>
+            <td>Card based webpage</td>
+            <td>Structure of the webpage is to match the site site theme</td>
+            <td>Minimalistic look , hovers effects, different card size.</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="research-panel" id="p4-content">
+        <h2>About Us Benchmarking</h2>
+        <div class="comparison-grid">
+          <div class="image-card">
+            <div class="header-tag">ECO_MART</div>
+            <div class="view-window"><img src="/images/about_our.jpeg" /></div>
+          </div>
+          <div class="image-card">
+            <div class="header-tag">
+              <span>
+                <a
+                  href="https://www.photosnepal.com/photo/smart-young-team-280b9bsje"
+                  target="_blank"
+                  style="color: black; text-decoration: none"
+                >
+                  photosnepal (REFERENCE)
+                </a>
+              </span>
+            </div>
+            <div class="view-window"><img src="/images/about_ref.png" /></div>
+          </div>
+        </div>
+        <table class="audit-table">
+          <tr>
+            <th>Category</th>
+            <th>Similarities</th>
+            <th>Differences</th>
+            <th>Improvements Made</th>
+          </tr>
+          <tr>
+            <td><b>About Us</b></td>
+            <td>Individual similar position</td>
+            <td>Had a hover effect leading to a blur images one by one</td>
+            <td>Added member position on front while hovering</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="research-panel" id="p5-content">
+        <h2>Contact Benchmarking</h2>
+        <div class="comparison-grid">
+          <div class="image-card">
+            <div class="header-tag">ECO_MART</div>
+            <div class="view-window"><img src="/images/form_our.jpeg" /></div>
+          </div>
+          <div class="image-card">
+            <div class="header-tag">
+              <span>
+                <a
+                  href="https://dribbble.com"
+                  target="_blank"
+                  style="color: black; text-decoration: none"
+                >
+                  dribble (REFERENCE)
+                </a>
+              </span>
+            </div>
+            <div class="view-window">
+              <img src="/images/form reference image.jpeg" />
+            </div>
+          </div>
+        </div>
+        <table class="audit-table">
+          <tr>
+            <th>Category</th>
+            <th>Similarities</th>
+            <th>Differences</th>
+            <th>Improvements Made</th>
+          </tr>
+          <tr style="border-left: 4px solid #f59e0b">
+            <td><b>Form Validation</b></td>
+            <td>Simplified structure and sections.</td>
+            <td>Our styling and elements differ to match the site theme.</td>
+            <td>
+              The improvement isn't much it's there, we have focused on more of
+              a minimal look, which perfectly match our overall theme and
+              styling
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <script src="/JS/Research.js"></script>
+    <script type="module" src="/JS/productpage.js"></script>
+  </body>
+</html>

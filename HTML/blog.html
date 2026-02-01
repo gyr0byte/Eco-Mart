@@ -14,19 +14,19 @@
 <body>
 
     <!-- NAVBAR -->
-    <header class="site-header">
+<header class="site-header">
         <div id="navbar">
-            <script>
-                fetch("/components/navbar.html")
-                    .then((res) => res.text())
-                    .then((html) => {
-                        document.getElementById("navbar").innerHTML = html;
-                        document.querySelector(".openFilter-button")?.remove();
-                        document.querySelector(".search-bar-container")?.remove();
+      <script>
+        fetch("/components/navbar.html")
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById("navbar").innerHTML = html;
+                document.querySelector(".openFilter-button")?.remove();
+                document.querySelector(".search-bar-container")?.remove();
 
-                    });
-            </script>
-        </div>
+          });
+      </script>
+    </div>
     </header>
 
 
@@ -120,7 +120,7 @@
     <footer class="footer">
         <p>© 2026 EcoMART</p>
     </footer>
-    <script type="module" src="/JS/productpage.js"></script>
+<script type="module" src="/JS/productpage.js"></script>
 </body>
 
 </html>

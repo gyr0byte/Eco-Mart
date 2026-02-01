@@ -363,6 +363,8 @@ if (document.querySelector(".product-card-container")) {
       document.querySelector(".quick-view-title").textContent = product.title;
       document.querySelector(".quick-view-price").textContent =
         product.newPrice;
+              document.querySelector(".quick-view-description").textContent =
+        product.desc2;
 
       const image =
         Array.isArray(product.images) && product.images.length

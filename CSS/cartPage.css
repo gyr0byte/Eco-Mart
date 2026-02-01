@@ -2,7 +2,6 @@
   font-family: "Brandon-text-regular";
   src: url(/fonts/HvDTrial_Brandon_Text_Bold-BF6514e9eb720dc.otf);
 }
-
 @font-face {
   font-family: "Mayrean";
   src: url(fonts/SHRIMP.ttf);
@@ -46,7 +45,6 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -68,7 +66,6 @@ body {
     opacity: 0;
     transform: translateX(-30px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -340,6 +337,8 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+
+
 
 .card {
   background: white;
@@ -624,7 +623,6 @@ html {
   0% {
     background-position: -1000px 0;
   }
-
   100% {
     background-position: 1000px 0;
   }

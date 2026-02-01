@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/components/navbar.css" />
+    <link rel="stylesheet" href="/components/navbar.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcoMART Blog</title>
@@ -24,11 +24,9 @@
         --dark: #1f2933;
         --white: #ffffff;
       }
-
       header {
         height: 100px;
       }
-
       body {
         color: var(--dark);
         background: var(--white);
@@ -159,6 +157,7 @@
       /*  MOBILE (≤600px) */
 
       @media (max-width: 600px) {
+       
         .main-blog {
           padding: 30px 20px 60px;
           grid-template-columns: 1fr;
@@ -209,17 +208,18 @@
   <body>
     <!-- NAVBAR  -->
     <header class="site-header">
-      <div id="navbar">
-        <script>
-          fetch("/components/navbar.html")
-            .then((res) => res.text())
-            .then((html) => {
-              document.getElementById("navbar").innerHTML = html;
-              document.querySelector(".openFilter-button")?.remove();
-              document.querySelector(".search-bar-container")?.remove();
-            });
-        </script>
-      </div>
+        <div id="navbar">
+      <script>
+        fetch("/components/navbar.html")
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById("navbar").innerHTML = html;
+                document.querySelector(".openFilter-button")?.remove();
+                document.querySelector(".search-bar-container")?.remove();
+
+          });
+      </script>
+    </div>
     </header>
     <!-- BLOG DETAIL -->
     <main class="main-blog">
@@ -393,7 +393,7 @@
     </main>
 
     <!-- FOOTER -->
-
+    
     <footer>© 2026 EcoMART</footer>
     <script type="module" src="/JS/productpage.js"></script>
   </body>
