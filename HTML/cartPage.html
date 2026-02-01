@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMART Cart</title>
+
+    <!-- Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/cartPage.css" />
+    <link rel="stylesheet" href="/CSS/product.css" />
+    <link rel="stylesheet" href="/CSS/styles.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="site-header">
+      <div id="navbar">
+        <script>
+          fetch("/components/navbar.html")
+            .then((res) => res.text())
+            .then((html) => {
+              document.getElementById("navbar").innerHTML = html;
+              document.querySelector(".openFilter-button")?.remove();
+              document.querySelector(".search-bar-container")?.remove();
+            });
+        </script>
+      </div>
+    </header>
+    <main id="page">
+      <!-- LEFT: CART -->
+      <section id="product-container">
+        <h2>Shopping Cart</h2>
+        <hr />
+
+        <div class="title-row">
+          <span>Product</span>
+          <span>Quantity</span>
+          <span>Price</span>
+        </div>
+
+        <!-- Cart items will be rendered here by JS -->
+        <div class="cart-items"></div>
+
+        <div class="cart-actions">
+          <button class="back" title="Previous Page">Back</button>
+          <button class="cancel" title="Cancel Order">Cancel Order</button>
+        </div>
+      </section>
+
+      <!-- RIGHT: SUMMARY -->
+      <aside id="summary">
+        <div class="card">
+          <h3>Order Summary</h3>
+          <div class="row">
+            <span>Subtotal:</span><span class="subtotal">Rs.0.00</span>
+          </div>
+          <div class="row">
+            <span>Tax (13%)</span><span class="tax">Rs.0.00</span>
+          </div>
+          <div class="row">
+            <span>Shipping</span><span class="shipping">Rs.0.00</span>
+          </div>
+          <div class="total-row">
+            <span>Total</span><span class="total-amount">Rs.0.00</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Payment Method</h3>
+          <div class="payments">
+            <img src="../images/esewa.jpg" alt="" />
+            <img src="../images/khalti.png" alt="" />
+            <img src="../images/mastercard.png" alt="" />
+            <img src="../images/paypal.webp" alt="" />
+          </div>
+          <button class="checkout" title="Proceed">Proceed to Checkout</button>
+        </div>
+      </aside>
+    </main>
+    <script type="module" src="../JS/cartPage.js"></script>
+    <script type="module" src="/JS/productpage.js"></script>
+    <script></script>
+  </body>
+</html>

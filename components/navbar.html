@@ -1,0 +1,72 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+/>
+
+<div class="side-navbar-ul-tags-container">
+  <div class="logo-container">
+    <h1>EcoMART.</h1>
+  </div>
+
+  <ul class="sidebar">
+    <li><a href="/HTML/index.html">Home</a></li>
+    <li><a href="/HTML/blogPage.html">Blog</a></li>
+    <li><a href="/HTML/productPage.html">Product</a></li>
+    <li><a href="/HTML/researchPage.html">Research</a></li>
+    <li><a href="/HTML/aboutUsPage.html">About us</a></li>
+    <i
+      style="cursor: pointer"
+      onclick="closeSideBar()"
+      class="fa-sharp fa-solid fa-xmark"
+    ></i>
+  </ul>
+</div>
+
+<div class="openFilter-button">
+  <button onclick="showFilterPannel()">
+    <span class="text">Filters</span>
+  </button>
+</div>
+
+<div class="navbar-container">
+  <div class="logo-container">
+    <h1>EcoMART.</h1>
+  </div>
+
+  <div class="navbar-ul-tags-container">
+    <ul>
+      <li><a href="/HTML/index.html">Home</a></li>
+      <li><a href="/HTML/blog.html">Blog</a></li>
+      <li><a href="/HTML/productPage.html">Product</a></li>
+      <li><a href="/HTML/researchPage.html">Research</a></li>
+      <li><a href="/HTML/aboutUsPage.html">About us</a></li>
+    </ul>
+  </div>
+
+  <div class="search-bar-container">
+    <input type="text" placeholder="Search products..." />
+    <button>Search</button>
+  </div>
+
+  <div class="cart-hamburger-container">
+    <a href="/HTML/cartPage.html">
+      <i class="material-symbols-outlined">shopping_cart</i>
+    </a>
+    <i
+      onclick="showSideBar()"
+      id="sidebar-menu"
+      class="material-symbols-outlined"
+      >dehaze</i
+    >
+  </div>
+</div>
+
+<div
+  class="overlay"
+  onclick="
+    closeSideBar();
+    closeFilterPanel();
+  "
+></div>
+
+<script type="module" src="/JS/productpage.js"></script>

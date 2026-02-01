@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMART Blog</title>
+
+    <link rel="stylesheet" href="/CSS/blog.css" />
+    <link rel="stylesheet" href="/components/navbar.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <div id="navbar">
+            <script>
+                fetch("/components/navbar.html")
+                    .then((res) => res.text())
+                    .then((html) => {
+                        document.getElementById("navbar").innerHTML = html;
+                        document.querySelector(".openFilter-button")?.remove();
+                        document.querySelector(".search-bar-container")?.remove();
+
+                    });
+            </script>
+        </div>
+    </header>
+
+
+    <!-- GRID -->
+    <main class="blog">
+
+        <!-- LEFT COLUMN: 4 small cards -->
+        <aside class="blog-left">
+
+            <a href="technology.html" class="card small">
+                <div class="card-text">
+                    <h3 style="font-weight: 500;">Green Tech</h3>
+                    <h4 style="font-weight: 300; font-size: xx-small;">BY Aditya Thapaliya</h4>
+                </div>
+                <img src="https://coruzant.com/wp-content/uploads/2022/05/green-technology-696x464.jpg"
+                    alt="Technology Image" />
+            </a>
+
+            <a href="positiveimpact.html" class="card small">
+                <div class="card-text">
+                    <h3 style="font-weight: 500;">The Green Innovation</h3>
+                    <h4 style="font-weight: 300; font-size: xx-small;">BY Aditya Thapaliya</h4>
+                </div>
+                <img src="https://media.istockphoto.com/id/1567731426/photo/waste-management-sorting-facility-worker.jpg?s=612x612&w=0&k=20&c=jvoA4Ijd2Y1u0QryLCQYyX0GpG4jClMpvkWFcFQHMis="
+                    alt="Technology Image" />
+            </a>
+
+            <a href="negativeimpact.html" class="card small">
+                <div class="card-text">
+                    <h3 style="font-weight: 500;">The Hidden Cost of Innovation</h3>
+                    <h4 style="font-weight: 300; font-size: xx-small;">BY Aditya Thapaliya</h4>
+                </div>
+                <img src="https://media.istockphoto.com/id/1411135736/photo/global-warming-and-human-waste-pollution-concept-sustainability-showing-the-effect-of-arid.jpg?s=612x612&w=0&k=20&c=XLEwEgOtf7b4xmndt_Ns_wH-vzGrug-NhPj58VLyAs4="
+                    alt="">
+            </a>
+
+            <a href="living.html" class="card small">
+                <div class="card-text">
+                    <h3 style="font-weight: 500;">Sustainable Living Tips &amp; Tricks</h3>
+                    <h4 style="font-weight: 300; font-size: xx-small;">BY Aditya Thapaliya</h4>
+                </div>
+                <img src="https://onetreeplanted.org/cdn/shop/articles/produce_in_reusable_bags_from_grocery_store_b69db454-71fd-45ff-b037-5e5d2a5cfd05_1400x.jpg?v=1767628175"
+                    alt="Technology Image" />
+            </a>
+
+        </aside>
+
+        <!-- CENTER MAIN CARD -->
+        <section class="blog-main">
+
+            <a href="communitypost.html" class="card main">
+                <img src="https://shopcircle.co/cdn/shop/articles/Frame_1_1.png?v=1731582661&width=960"
+                    alt="Community Image" />
+                <h2>The Click That Plants a Forest: Tentree’s Story</h2>
+                <p>From a Small Startup to 100 Million Trees</p>
+
+            </a>
+
+        </section>
+
+        <!-- RIGHT COLUMN: 2 medium cards -->
+        <aside class="blog-right">
+
+            <a href="interview.html" class="card medium">
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*tPA3dMmQdXYimnHa"
+                    alt="Interviews Image" style="border-radius: 8px; height: 170px;" />
+                <h3 style="font-weight: 500;">Interviews with Brands &amp; Experts</h3>
+            </a>
+
+            <a href="news.html" class="card medium">
+                <img src="https://i.pinimg.com/1200x/86/8f/71/868f71ff2107faf3d9cd2b3d3909243f.jpg" alt="News Image"
+                    style=" border-radius: 8px; height: 170px;" />
+                <h3 style="font-weight: 500;">UK to join major wind farm project with nine European countries</h3>
+            </a>
+
+        </aside>
+
+        <!-- BOTTOM CARD (spans full width) -->
+        <section class="blog-bottom">
+            <a href="sustainable product.html" class="card wide">
+                <h2>The Path Forward </h2>
+                <p>As we reach the conclusion of our deep dive into the world of eco-commerce, environmental
+                    breakthroughs, and the dual-edged sword of technology, one fundamental question remains: Why choose
+                    sustainable living?</p>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 EcoMART</p>
+    </footer>
+    <script type="module" src="/JS/productpage.js"></script>
+</body>
+
+</html>

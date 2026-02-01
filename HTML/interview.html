@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/components/navbar.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoMART Blog</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    :root {
+      --bg: #eef6ea;
+      --green: #4b6f44;
+      --dark: #1f2933;
+      --white: #ffffff;
+    }
+
+    header {
+      height: 100px;
+    }
+
+    body {
+      color: var(--dark);
+      background: var(--white);
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #e8f3e3;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--green);
+      border-radius: 10px;
+    }
+
+    header {
+      height: 100px;
+    }
+
+    /* MAIN LAYOUT */
+    .main-blog {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 80px 10px 40px 100px;
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      gap: 40px;
+    }
+
+    .content {
+      padding-right: 40px;
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .divider {
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      margin-top: 100px;
+      margin-bottom: 80px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .dropcap::first-letter {
+      font-size: 56px;
+      font-weight: bold;
+      float: left;
+      margin-right: 10px;
+      line-height: 1;
+    }
+
+    h3 {
+      margin: 40px 0 15px;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    /* IMAGE BOX */
+    .image-box {
+      margin: 40px 0;
+      max-width: 100%;
+      border: 8px solid #000;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* SIDEBAR */
+    .sidebar h4 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .sidebar p {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: var(--green);
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+    }
+
+    /*  MOBILE (≤600px) */
+
+    @media (max-width: 600px) {
+
+
+
+      .main-blog {
+        padding: 30px 20px 60px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .content {
+        padding-right: 0;
+        border-right: none;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .dropcap::first-letter {
+        font-size: 42px;
+      }
+    }
+
+    /*  TABLET (≤900px) */
+
+    @media (max-width: 900px) {
+      .main-blog {
+        grid-template-columns: 1fr;
+      }
+
+      .content {
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+
+    /*  LARGE SCREENS (≥1400px) */
+
+    @media (min-width: 1400px) {
+      .main-blog {
+        max-width: 15s00px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR  -->
+  <header class="site-header">
+    <div id="navbar">
+      <script>
+        fetch("/components/navbar.html")
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById("navbar").innerHTML = html;
+            document.querySelector(".openFilter-button")?.remove();
+            document.querySelector(".search-bar-container")?.remove();
+          });
+      </script>
+    </div>
+  </header>
+  <!-- BLOG DETAIL -->
+  <main class="main-blog">
+    <article class="content">
+      <h1 class="title" style="font-size: 40px">
+        Built for a Better World — or for Control?
+      </h1>
+      <a href="#" style="text-decoration: none; color: var(--green)">
+        <i>Written by </i></a>
+      <a href="#" style="text-decoration: none; color: #726e6d"><b> Praful Dhakal</b></a>
+      <div class="divider"></div>
+
+      <img src="https://i.pinimg.com/736x/4f/69/f8/4f69f85820a29b637d6775e9f50eaaa3.jpg" alt="windmill image"
+        style="width: 100%; height: auto; margin-bottom: 50px" />
+      <!-- ARTICLE -->
+      <p class="dropcap">
+        The Truth Behind Eco-Living Tech” by Leland Chen offers a
+        comprehensive and thought-provoking examination of eco-friendly
+        technology in the modern digital age. The author carefully situates
+        the discussion within today’s global environmental crisis, emphasizing
+        how rapid technological expansion has quietly intensified energy
+        consumption and carbon emissions. Rather than presenting technology as
+        inherently harmful, Chen adopts a balanced perspective, exploring both
+        its environmental costs and its powerful potential to drive
+        sustainable change. The article effectively addresses current
+        realities, future possibilities, the challenges involved, and
+        practical solutions that can guide society toward a more responsible
+        relationship with technology.
+        <br /><br />
+        One of the article’s most compelling strengths is how it reframes
+        eco-friendly technology not as a sacrifice, but as a multidimensional
+        opportunity—financially, socially, and environmentally. Chen opens
+        with striking statistics about global digital energy use and CO₂
+        emissions, immediately establishing the scale and urgency of the
+        issue. These data points capture the reader’s attention while
+        reinforcing the idea that climate change is not solely the result of
+        heavy industries; everyday digital habits also contribute
+        significantly. By grounding the discussion in measurable facts, the
+        article builds credibility and ensures that readers take the issue
+        seriously from the very beginning.
+        <br /><br />
+        The article stands out for its breadth and logical flow. Chen moves
+        smoothly across a wide range of interconnected topics, including
+        energy-efficient devices, solar-powered technology, eco-friendly apps
+        and platforms, sustainable e-waste recycling, cloud storage, and
+        digital minimalism. This holistic approach strengthens the central
+        argument that sustainability in technology cannot be achieved through
+        isolated actions. Instead, it requires a collective shift in behavior,
+        consumption patterns, and system design. Each section complements the
+        others, creating a clear picture of how personal choices and
+        large-scale technological systems interact to shape environmental
+        outcomes.
+        <br /><br />
+        Real-world examples play a crucial role in making the article
+        relatable and practical. Instances of households reducing electricity
+        costs through solar chargers or individuals adopting greener habits
+        with the help of sustainability apps demonstrate that eco-friendly
+        technology is not theoretical or futuristic. These examples bridge the
+        gap between concept and application, helping readers visualize how
+        small lifestyle changes can produce meaningful results. By
+        highlighting cost savings alongside environmental benefits, Chen
+        further strengthens the argument that sustainable choices are both
+        sensible and rewarding.
+        <br /><br />
+        Stylistically, the article adopts a bold, conversational, and
+        occasionally provocative tone. This writing style makes complex
+        technological and environmental issues accessible, particularly to
+        younger readers and those with a strong interest in digital culture.
+        Memorable phrases such as “micro-tools with macro potential” and
+        “progress over perfection” effectively summarize the article’s core
+        philosophy and encourage readers to focus on achievable improvements
+        rather than idealized solutions. However, the highly stylized language
+        may feel excessive to readers seeking a more formal or academic
+        approach. Despite this, the tone successfully serves the article’s
+        broader purpose of engagement and awareness-building.
+        <br /><br />
+        The discussion on e-waste recycling and digital minimalism is
+        especially impactful. Chen draws attention to the alarming volume of
+        discarded electronic devices and the environmental damage caused by
+        improper disposal. At the same time, the article avoids moral
+        judgment, instead offering realistic and actionable steps such as
+        recycling responsibly, extending device lifespans, and reducing
+        unnecessary digital consumption. The emphasis on digital minimalism
+        adds a psychological and social dimension to sustainability, showing
+        how reduced screen time and mindful technology use can benefit both
+        personal well-being and the planet.
+        <br /><br />
+        Overall, “Built for a Better World — or for Control? The Truth Behind
+        Eco-Living Tech” succeeds as both an informative and motivational
+        piece. Leland Chen skillfully balances urgency with optimism,
+        presenting sustainability as an achievable goal rather than an
+        overwhelming challenge. By emphasizing small, consistent actions over
+        perfection, the article empowers readers to take responsibility for
+        their digital habits. It ultimately leaves the audience with a clear
+        message: meaningful environmental impact can begin with simple
+        decisions—choosing efficient devices, using sustainable apps,
+        recycling electronics properly, or even stepping away from a screen
+        when possible.
+      </p>
+    </article>
+    <!-- AUTHOR -->
+    <aside class="sidebar">
+      <h4>Praful Dhakal</h4>
+      <p>
+        Praful Dhakal (May 2008) is a student at Itahari International
+        College. He has actively contributed to the development of the Ecomart
+        project, where he worked as a Cart Page Developer, focusing on
+        building and improving user-friendly shopping cart functionality. In
+        addition to this project, he has previously been involved in several
+        other web development projects, gaining hands-on experience in
+        designing, developing, and maintaining websites
+      </p>
+      <a href="#">learn more</a>
+    </aside>
+  </main>
+  <!-- FOOTER -->
+  <footer>© 2026 EcoMART</footer>
+</body>
+<script type="module" src="/JS/productpage.js"></script>
+
+</html>

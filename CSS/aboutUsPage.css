@@ -792,3 +792,16 @@ body::-webkit-scrollbar {
     height: 200px;
   }
 }
+
+@media (max-width: 1404px) {
+  .hero-product-image {
+    height: auto;
+
+  }
+
+  .hero-wrapper {
+
+    flex-direction: column;
+
+  }
+}

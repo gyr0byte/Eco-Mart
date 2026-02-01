@@ -1,112 +1,372 @@
 @font-face {
   font-family: "Brandon-text-regular";
-  src: url(fonts/HvDTrial_Brandon_Text_Regular-BF6514e9eb617a0.otf);
+  src: url(fonts/HvDTrial_Brandon_Text_Bold-BF6514e9eb720dc.otf);
 }
 @font-face {
   font-family: "Mayrean";
   src: url(fonts/SHRIMP.ttf);
+}
+@font-face {
+  font-family: "Padauk";
+  src: url(fonts/Padauk-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Ramabhadra";
+  src: url("/fonts/homepage-fonts/Ramabhadra-Regular.ttf");
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Mayrean";
 }
 
+html,
 body {
+  height: auto;
+  overflow-y: auto;
   overflow-x: hidden;
-  overflow-y: hidden;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  background-color: #faf7f2;
-
-  flex-direction: column;
-
-  line-height: 1.5;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #0f663d;
-  filter: drop-shadow(0 0.2rem 0.85rem rgb(78, 75, 70));
-
-  height: 80px;
+section {
+  overflow: hidden;
 }
 
-.rectangle-container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 5rem;
-}
-
-.text {
-  color: antiquewhite;
-
-  font-family: "Mayrean";
-  font-size: 30px;
-}
-
-.text i {
-  margin-left: 12px;
-}
-.navbar-container {
-  width: 180%;
-  justify-content: center;
-  align-items: center;
-  margin-right: 8rem;
-}
-.ul-tags ul {
-  gap: 25px;
-  display: flex;
-  list-style: none;
-  margin-left: 10.3rem;
-}
-.ul-tags ul li a {
-  text-decoration: none;
-  font-family: "Mayrean";
-  color: antiquewhite;
-  font-weight: 20px;
-  font-size: 21px;
+#landing-page-one {
   position: relative;
-  transition: 0.2s ease-in;
+  background-color: #e9f7ea;
+  min-height: 1000px;
 }
 
-.cart-bar-container {
+.productPage {
+  background-color: #eaf7ec;
+}
+
+/* HOMEPAGE section page 01 ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.line-hero-text-container {
+  position: absolute;
+  inset: 0;
+  padding-left: 10%;
+  display: grid;
   width: 100%;
+  height: 100vh;
+
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: max-content auto max-content;
+}
+
+.horizantal-lines {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.h-line-1 {
+  margin-top: 2rem;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  opacity: 1;
+}
+
+.h-line-2 {
+  margin-top: 56.6rem;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.v-line-wrapper {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  display: flex;
+  gap: 10rem;
+  height: 100%;
+  pointer-events: none;
+}
+
+.v1,
+.v2 {
+  height: calc(56.6rem + 2rem);
+  border-left: 1px solid black;
+  opacity: 0.18;
+}
+
+.hero-text {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 12rem;
+
+  font-family: Ramabhadra;
+  font-size: clamp(2.5rem, 2vw, 6.24rem);
+  line-height: 6rem;
+
+  max-width: 100%;
+}
+
+.hero-text span {
+  opacity: 0.3;
+}
+
+.image-container {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 12rem;
+  margin-left: -6rem;
+  margin-right: 2rem;
+
+  justify-self: center;
+}
+
+.image-container img {
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.logo_navlinks_container {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: start;
+}
+
+.logo-wrapper {
+  margin-top: 3.2rem;
+  margin-left: 6.24rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+#home-page-sidebar-menu {
+  font-size: 2rem;
+  margin-top: 0.1rem;
+  cursor: pointer;
+  z-index: 999;
+  display: none;
+}
+
+.logo-wrapper h1 {
+  font-family: Ramabhadra;
+}
+.side-navbar-ul-tags-container-homepage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+
+  display: flex; /* IMPORTANT */
+  flex-direction: column;
+  gap: 3rem;
+  padding: 30px;
+
+  transition: transform 0.35s ease;
+  background-color: rgba(176, 201, 176, 0.377);
+  backdrop-filter: blur(10px);
+
+  z-index: 1000;
+}
+
+.ul-tags-container {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
-  margin-right: 3rem;
+  margin-top: 0;
+  margin-right: 12rem;
 }
 
-.cart-bar-container i {
-  color: antiquewhite;
-  margin: 25px;
-  font-size: 30px;
-  cursor: pointer;
+.ul-tags-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+  margin-top: 4rem;
+  margin-right: 6rem;
 }
 
-.ul-tags a:after {
+.ul-tags-container li a {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0e432a;
+  text-decoration: none;
+}
+
+.ul-tags-container li a::after {
   content: "";
   position: absolute;
-  background-color: antiquewhite;
-
-  height: 3px;
-  width: 0%;
   left: 0;
-  bottom: -3px;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background-color: #374b38;
   border-radius: 2px;
-  transition: 0.3s linear;
+  transition: width 0.3s ease;
 }
-.ul-tags a:hover::after {
+
+.ul-tags-container li a:hover::after {
   width: 100%;
+}
+
+.hero-text-2-wrapper {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.hero-text-2-wrapper h1 {
+  margin-top: 4rem;
+  font-family: Ramabhadra;
+  line-height: 2.2rem;
+}
+
+.hero-link-wrapper {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 10em;
+  margin-left: -5.9rem;
+}
+
+.hero-link-wrapper li {
+  list-style: none;
+}
+
+.hero-link-wrapper a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0e432a;
+}
+
+/* FAQ Section- page 2 ----------------------------------------------------------------------------------------------------------------------------------------------*/
+#landing-page-two {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e9f7ea;
+
+  position: relative;
+  padding: 5% 2%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.faq-title-wrapper {
+  position: relative;
+  width: 30%;
+  margin-bottom: 2rem;
+}
+
+.faq-title-wrapper p {
+  font-family: Ramabhadra;
+}
+
+.faq-section-hero-text-wrapper {
+  position: relative;
+  margin-bottom: 3rem;
+  width: fit-content;
+}
+
+.faq-section-hero-text-wrapper h1 {
+  font-family: Ramabhadra;
+  font-size: 50px;
+  line-height: 0.89;
+}
+
+/* faq section checkboxes */
+
+.check-list-wrapper {
+  position: relative;
+  width: 25%;
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.check-list-wrapper p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* faq page accordian */
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: fit-content;
+  margin-left: 60rem;
+  position: relative;
+  top: -25rem;
+}
+
+.accordion {
+  display: flex;
+  width: 40%;
+  margin-top: 1.5rem;
+}
+.accordion-label {
+  width: 20%;
+  display: flex;
+  gap: 10rem;
+
+}
+.accordion-label i{
+  justify-self: flex-end;
+}
+.accordion-container li {
+  list-style: none;
+  margin-top: 0.5%;
+  width: 20%;
+
+}
+.accordion-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    width: 600px;
+  gap: 1rem;
+}
+.accordion-container label {
+  font-family: Ramabhadra;
+  font-size: 20px;
+  cursor: pointer;
+
+  flex: 1;              /* allow text to take space */
+ 
+}
+
+
+.accordion-container input {
+  display: none;
+}
+
+.accordion-container p {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5rem;
+}
+
+.content {
+  margin-top: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+   white-space: normal; 
+  width: 600px;
+  
+}
+
+.accordion li.active .content {
+  max-height: 100px;
+}
+
+#arrow-icon {
+  transition: transform 0.4s ease;
+}
+
+.accordion li.active #arrow-icon {
+  transform: rotate(180deg);
 }
 
 /* Footer Styles */
@@ -281,5 +541,139 @@ body {
   .footer-contact {
     flex-direction: column;
     gap: 15px;
+  }
+}
+
+/* MEDIA QUERY */
+
+@media (max-width:1640px){
+  .accordion-container {
+ 
+  margin-left: 0rem;
+  top: 0rem;
+}
+}
+
+@media (max-width: 1418px) {
+  .accordion-container {
+    top: 0;
+  }
+  .ul-tags-container {
+    display: none;
+  }
+
+  #home-page-sidebar-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 1072px) {
+  .hero-text {
+    font-size: clamp(2rem, 2vw, 6.24rem);
+    line-height: 5rem;
+  }
+
+  .image-container {
+    margin-left: -3rem;
+  }
+
+  .hero-link-wrapper {
+    margin-left: -3rem;
+  }
+
+  .h-line-2 {
+    margin-top: 56.1rem;
+  }
+
+  /* .accordion-container {
+    max-width: 60%;
+  } */
+}
+
+@media (max-width: 930px) {
+  #landing-page-one {
+    min-height: 1300px;
+  }
+
+  .line-hero-text-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content max-content;
+    padding-left: 0;
+    justify-items: start;
+    padding-left: clamp(1rem, 6vw, 6rem);
+  }
+
+  .h-line-2 {
+    display: none;
+  }
+
+  .logo-wrapper {
+    margin-left: 0rem;
+    padding-left: clamp(1rem, 6vw, 6rem);
+  }
+
+  .v1,
+  .v2 {
+    display: none;
+  }
+
+  .hero-text {
+    margin-top: 0rem;
+    grid-row: 3;
+    grid-column: 1;
+    font-size: clamp(2rem, 2vw, 6.24rem);
+    line-height: 5rem;
+  }
+
+  .image-container {
+    justify-self: start;
+    margin-top: 4rem;
+    margin-left: 0rem;
+  }
+
+  .hero-text-2-wrapper {
+    grid-column: 1;
+  }
+
+  .hero-text-2-wrapper h1 {
+    margin-top: 10rem;
+  }
+
+  .hero-link-wrapper {
+    margin-top: 2rem;
+    justify-self: start;
+    margin-left: 0rem;
+  }
+
+  .faq-title-wrapper {
+    width: 80%;
+  }
+
+  .check-list-wrapper {
+    width: 80%;
+  }
+
+  /* .accordion-container {
+    max-width: 100%;
+    margin-left: 0;
+  } */
+}
+
+@media (max-width: 486px) {
+  #landing-page-one {
+    min-height: 1100px;
+  }
+  .hero-text {
+    font-size: 1.4rem;
+    line-height: 3.1rem;
+  }
+
+  .faq-section-hero-text-wrapper h1 {
+    font-size: 35px;
+  }
+
+  .faq-title-wrapper,
+  .check-list-wrapper {
+    width: 100%;
   }
 }

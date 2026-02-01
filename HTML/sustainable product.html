@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/components/navbar.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMART Blog</title>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      :root {
+        --bg: #eef6ea;
+        --green: #4b6f44;
+        --dark: #1f2933;
+        --white: #ffffff;
+      }
+
+      header {
+        height: 100px;
+      }
+
+      body {
+        color: var(--dark);
+        background: var(--white);
+      }
+
+      /* SCROLLBAR */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #e8f3e3;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--green);
+        border-radius: 10px;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+        position: sticky;
+        top: 0;
+        background: var(--white);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 90;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        border-bottom: 2px solid var(--green);
+      }
+
+      /* MAIN LAYOUT */
+      .main-blog {
+        margin: 0 auto;
+        padding: 80px 10px 40px 100px;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        gap: 40px;
+      }
+
+      .content {
+        padding-right: 40px;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      .title {
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .divider {
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        margin-top: 100px;
+        margin-bottom: 80px;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 22px;
+      }
+
+      .dropcap::first-letter {
+        font-size: 56px;
+        font-weight: bold;
+        float: left;
+        margin-right: 10px;
+        line-height: 1;
+      }
+
+      h3 {
+        margin: 40px 0 15px;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      /* SIDEBAR */
+      .sidebar h4 {
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      .sidebar p {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: var(--green);
+        font-size: 14px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--green);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 13px;
+      }
+
+      /*  MOBILE (≤600px) */
+
+      @media (max-width: 600px) {
+        .main-blog {
+          padding: 30px 20px 60px;
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .content {
+          padding-right: 0;
+          border-right: none;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .dropcap::first-letter {
+          font-size: 42px;
+        }
+      }
+
+      /*  TABLET (≤900px) */
+
+      @media (max-width: 900px) {
+        .main-blog {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          border-right: none;
+          padding-right: 0;
+        }
+      }
+
+      /*  LARGE SCREENS (≥1400px) */
+
+      @media (min-width: 1400px) {
+        .main-blog {
+          max-width: 1500px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR  -->
+    <header class="site-header">
+      <div id="navbar">
+        <script>
+          fetch("/components/navbar.html")
+            .then((res) => res.text())
+            .then((html) => {
+              document.getElementById("navbar").innerHTML = html;
+              document.querySelector(".openFilter-button")?.remove();
+              document.querySelector(".search-bar-container")?.remove();
+            });
+        </script>
+      </div>
+    </header>
+    <!-- BLOG DETAIL -->
+    <main class="main-blog">
+      <article class="content">
+        <h1 class="title" style="font-size: 40px">
+          The Ultimate Investment in Our Future
+        </h1>
+        <a href="#" style="text-decoration: none; color: var(--green)">
+          <i>Written by </i></a
+        >
+        <a href="#" style="text-decoration: none; color: #726e6d"
+          ><b>Aditya Thapaliya</b></a
+        >
+        <div class="divider"></div>
+
+        <img
+          src="https://media.licdn.com/dms/image/v2/D5612AQH3h658uMshYQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1724004331746?e=1771459200&v=beta&t=bz6PqCGQ_xenYB5MgTxy96ToCX1OUMGQkkhpjYmK43o"
+          alt=""
+          style="
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+          "
+        />
+        <!-- ARTICLE -->
+        <p class="dropcap">
+          As we reach the conclusion of our deep dive into the world of
+          eco-commerce, environmental breakthroughs, and the dual-edged sword of
+          technology, one fundamental question remains: Why choose sustainable
+          living? It may seem that in the world where convenience and speed are
+          highly valued, becoming a sustainable living person may seem like
+          swimming against the wave. But, as we have observed in this blog,
+          sustainability does not imply a compromise; it is an improvement. It
+          is a promise to live a better life, being better healthier and having
+          a deeper attachment to the surrounding world. Going on this road is
+          the greatest investment that one can make in the 21st century.
+          <br /><br />
+          1. Personal Well-being and Sustainable Happiness. The significant
+          effect that sustainable living has on your health, both mentally and
+          physically, it is one of the most important reasons why this lifestyle
+          should be chosen. According to psychologists, there exists a concept,
+          which they call Sustainable Happiness, a wellness that is neither
+          exploitative of other people nor of the environment.
+          <br /><br />
+          Mindfulness and Purpose: You have to make a decision to purchase in
+          lesser quantities and buy in higher quality, which makes you become
+          more mindful. This willfulness minimizes the clutter of the mind
+          brought forth by overconsumption. Being aware that your everyday
+          habits such as composting or shopping ethical brands are going to
+          create a global solution gives you a sense of meaning that cannot be
+          matched by material possessions.
+          <br /><br />
+          More Healthy Spaces: A sustainable lifestyle can be achieved by
+          eliminating forever chemicals and toxins in your house. By using
+          organic fabrics and cleaning products that do not contain toxins, you
+          will improve indoor air quality and limit the number of substances
+          that cause respiratory and skin complications.
+          <br /><br />
+          The Nature Connection: A sustainable lifestyle asks us to devote more
+          of our time to the outdoors. It can be gardening, cycling to work or
+          just walking in a local park, but this link with nature is
+          scientifically confirmed to cool the level of cortisol, decrease
+          stress and improve the overall mood.
+          <br /><br />
+          2. Financial Resilience: The Myth of the Eco-Premium. One such myth is
+          that only the rich people can live sustainably. Although certain
+          ecological products are more expensive in the short-term, a
+          sustainable lifestyle is likely to earn your pocket money over time.
+          This is what is referred to as Economic Sustainability.
+          <br /><br />
+          Efficiency is Savings: Lighting LEDs, installing a smart thermostat,
+          and selecting power efficient appliances can save up to 30 percent of
+          household utility bills. Equally, it is seen that water-saving
+          fixtures recoup their costs in a few months through a lower water
+          bill.
+          <br /><br />
+          The Buy for Life Philosophy: Sustainable living is a change in
+          approach whereby disposability is replaced with durability. Buy a nice
+          pair of boots or a quality kitchen appliance and you will not be
+          changing every single year. The buy once strategy is much more
+          inexpensive than the cycle of replacement over a period of ten years.
+          <br /><br />
+          Minimalism as a Financial Weapon: This is because by declining to
+          spend money on stuff that do not enrich your life and concentrating on
+          what actually matters, you increase your savings. Minimalism does not
+          imply nothing, it is about creating space to what is important.
+          <br /><br />
+          3. The Ripple Effect: Change or System Change. It is a frequent point
+          to be made that the personal actions of people are so small that they
+          have no effect on the global climate change. This however overlooks
+          the Ripple Effect. Each sustainable decision that you make is a ballot
+          to what type of a world you want to exist in.
+          <br /><br />
+          Getting the Market Shifted: When you make a purchase out of a brand
+          such as the EcoMart you are contributing to the capital that will
+          enable sustainable industries to develop. The pressure of this market
+          compels bigger corporations to alter their practice in order to be
+          competitive.
+          <br /><br />
+          Establishing New Rules: Human beings are social beings. Your neighbors
+          watching you doing the composting or with a reusable tote makes it
+          normal. The cultural change that ultimately results in the colossal
+          policy changes and international treaties that we spoke about in our "
+          News and Updates card is the result of individual actions.
+          <br /><br />
+          Reducing the Collective Footprint: According to the statistics, one of
+          the main sources of greenhouse gas emissions in the world is the
+          household of the private households, which accounts about 72 percent.
+          It implies that with only three little adjustments that each household
+          would have to make to their lives, including, but not limited to,
+          eating less meat, traveling less, and using renewable energy, it would
+          be possible to achieve almost half of the targets established by the
+          Paris Climate Agreement.
+          <br /><br />
+          4. Conserving World Biodiversity and the Future. Lastly, the decision
+          to live sustainably is a legacy. It is concerning the fact that the
+          future generations of the mini-moons will have a healthy and vibrant
+          Earth to look down to.
+          <br /><br />
+          Resource Preservation: The resources of our planet which are clean
+          water, fertile soil, old-growth forests are limited. Sustainable
+          living will help us utilize these resources in a level that they can
+          be replenished instead of consuming them to benefit the short run.
+          <br /><br />
+          Climate Mitigation: We can reduce our carbon footprints, which
+          directly means that we will reduce the frequency and severity of
+          extreme weather events. This shields the most vulnerable population in
+          the world, which is mostly the toughest hit by effects of a changing
+          climate.
+          <br /><br />
+          A Moral Responsibility: It is our first generation to realize to the
+          full extent the harm we are causing the planet and it is the last
+          generation to correct the situation. Going green is one method of
+          keeping our obligation to the children and grandchildren who will
+          inherit the left over world.
+          <br /><br />
+          Table of Conclusion: Your Story Starts Here. This blog has discussed
+          the numerous aspects of green revolution such as the technology, which
+          drives it, and the success stories that can motivate it. But even at
+          the end of the day what counts most of all is you.
+          <br /><br />
+          Sustainable living cannot be a destination because it is a learning
+          process of lifelong learning. It is regarding deciding to make the
+          best out of the information available to you. In making a sustainable
+          lifestyle choice, you are making a choice of integrity, health, and
+          hope. You are demonstrating that you can succeed and in the process
+          save the fragile equilibrium of our world.
+          <br /><br />
+          We thank you to go on this trip with you. You can start with replacing
+          one plastic bottle, or you can replace your entire home power
+          infrastructure, but the thing is that no matter what green decision
+          you make, each of them is a step towards a better planet.
+        </p>
+      </article>
+      <!-- AUTHOR -->
+      <aside class="sidebar">
+        <h4>Aditya Thapaliya</h4>
+        <p>
+          Aditya Thapaliya (born December 2007) is a student at Itahari
+          International College. He has contributed to the development of the
+          Ecomart project as a Blog Page Designer and Coder, where he was
+          responsible for designing layouts and implementing functional,
+          well-structured code. He has previously worked on several web
+          development projects, gaining valuable experience in website design,
+          coding, and overall web development..
+        </p>
+        <a href="#">learn more</a>
+      </aside>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>© 2026 EcoMART</footer>
+    <script type="module" src="/JS/productpage.js"></script>
+  </body>
+</html>

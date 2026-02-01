@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/components/navbar.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMART Blog</title>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      :root {
+        --bg: #eef6ea;
+        --green: #4b6f44;
+        --dark: #1f2933;
+        --white: #ffffff;
+      }
+      header {
+        height: 100px;
+      }
+      body {
+        color: var(--dark);
+        background: var(--white);
+      }
+
+      /* SCROLLBAR */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #e8f3e3;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--green);
+        border-radius: 10px;
+      }
+
+      /* MAIN LAYOUT */
+      .main-blog {
+        margin: 0 auto;
+        padding: 80px 10px 40px 100px;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        gap: 40px;
+      }
+
+      .content {
+        padding-right: 40px;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      .title {
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .divider {
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        margin-top: 100px;
+        margin-bottom: 80px;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 22px;
+      }
+
+      .dropcap::first-letter {
+        font-size: 56px;
+        font-weight: bold;
+        float: left;
+        margin-right: 10px;
+        line-height: 1;
+      }
+
+      h3 {
+        margin: 40px 0 15px;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      /* SIDEBAR */
+      .sidebar h4 {
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      .sidebar p {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: var(--green);
+        font-size: 14px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--green);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 13px;
+      }
+
+      /*  MOBILE (≤600px) */
+      @media (max-width: 600px) {
+        .navbar {
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px;
+        }
+
+        nav {
+          justify-content: center;
+          gap: 15px;
+        }
+
+        .main-blog {
+          padding: 30px 20px 60px;
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .content {
+          padding-right: 0;
+          border-right: none;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .dropcap::first-letter {
+          font-size: 42px;
+        }
+      }
+
+      /*  TABLET (≤900px) */
+      @media (max-width: 900px) {
+        .main-blog {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          border-right: none;
+          padding-right: 0;
+        }
+      }
+
+      /* 🖥️ LARGE SCREENS (≥1400px) */
+      @media (min-width: 1400px) {
+        .main-blog {
+          max-width: 1500px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR  -->
+    <header class="site-header">
+      <div id="navbar">
+        <script>
+          fetch("/components/navbar.html")
+            .then((res) => res.text())
+            .then((html) => {
+              document.getElementById("navbar").innerHTML = html;
+              document.querySelector(".openFilter-button")?.remove();
+              document.querySelector(".search-bar-container")?.remove();
+            });
+        </script>
+      </div>
+    </header>
+
+    <!-- BLOG DETAIL -->
+    <main class="main-blog">
+      <article class="content">
+        <h1 class="title" style="font-size: 40px">
+          The Hidden Cost of Innovation
+        </h1>
+        <a href="#" style="text-decoration: none; color: var(--green)">
+          <i>Written by </i></a
+        >
+        <a href="#" style="text-decoration: none; color: #726e6d"
+          ><b>Praful Dhakal</b></a
+        >
+        <div class="divider"></div>
+
+        <img
+          src="https://media.istockphoto.com/id/1411135736/photo/global-warming-and-human-waste-pollution-concept-sustainability-showing-the-effect-of-arid.jpg?s=612x612&w=0&k=20&c=XLEwEgOtf7b4xmndt_Ns_wH-vzGrug-NhPj58VLyAs4="
+          alt=""
+          style="
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+          "
+        />
+        <!-- ARTICLE -->
+        <p class="dropcap">
+          The Hidden Cost of Innovation: Negative Impacts of Technology on the
+          Environment Technology is often referred as a solution to
+          environmental challenges, yet its rapid growth and widespread adoption
+          also come with hidden environmental costs. While modern innovations
+          promise efficiency and sustainability, the transition toward advanced
+          and so-called “green” technologies can itself place significant
+          pressure on natural resources. Understanding these impacts is
+          essential for making more responsible technological choices.
+          <br /><br />
+          One major concern is the environmental cost of producing new
+          technologies. Devices such as smartphones, electric vehicles, solar
+          panels, and batteries require large amounts of raw materials,
+          including lithium, cobalt, rare earth metals, and copper. Mining these
+          resources leads to deforestation, soil degradation, water pollution,
+          and loss of biodiversity. In many cases, the environmental damage
+          caused during extraction outweighs the long-term benefits promised by
+          the technology.
+          <br /><br />
+          This results as the loss of nature and the future generations could
+          also experience scarcity of many resources. The shift toward renewable
+          and smart technologies also increases electronic waste (e-waste). As
+          newer and more advanced devices enter the market, older technologies
+          are quickly discarded. Many electronic products are difficult to
+          recycle due to complex designs and mixed materials. Improper disposal
+          releases harmful chemicals into soil and water, posing risks to both
+          ecosystems and human health.
+
+          <br /><br />
+          Although digital systems are often seen as a way to reduce paper use,
+          they rely heavily on data centers and cloud infrastructure, which
+          consume vast amounts of electricity and water. Streaming services,
+          online storage, and constant internet usage increase energy demand,
+          much of which still comes from non-renewable sources. This challenges
+          the idea that digital solutions are always environmentally neutral.
+          <br /><br />
+          The rise of electric vehicles and smart transportation also presents
+          environmental trade-offs. While these technologies reduce direct fuel
+          use, battery production and disposal create serious environmental
+          challenges. Manufacturing batteries is energy-intensive, and improper
+          handling at the end of their lifecycle can cause toxic pollution. This
+          counters the assumption that all modern transportation technologies
+          are fully sustainable. Concept of batteries that are fully nature
+          friendly have also emerged but the development and replacement of
+          traditional batteries is still not seen possible in the near future.
+          <br /><br />
+          In agriculture, advanced technologies improve efficiency and
+          productivity but can also lead to over-dependence on technology-driven
+          systems. High-tech farming tools often require constant upgrades,
+          electronic components, and energy inputs. Small-scale farmers may
+          struggle to afford or maintain these systems, leading to increased
+          inequality and resource pressure. Many technologies in such sectors
+          are not even fully shifted to electricity yet.
+          <br /><br />
+          Another hidden impact is planned obsolescence, where devices are
+          designed with limited lifespans to encourage frequent replacement.
+          This practice accelerates consumption, increases waste, and demands
+          continuous extraction of raw materials. Instead of repairing or
+          upgrading existing products, consumers are pushed toward buying new
+          ones, intensifying environmental strain. In such case, if the devices
+          are made for short life-span, there should be a provision for
+          recycling of the materials used in older models. This reduces the
+          extraction of the minerals.
+          <br /><br />
+          Even technologies designed to reduce waste can have unintended
+          consequences. Recycling systems and waste-processing technologies
+          require energy, infrastructure, and transportation. When recycling is
+          inefficient or poorly managed, it can result in pollution rather than
+          environmental benefit. So it is the responsibility of the manufacturer
+          for proper disposal and minimal waste production.
+          <br /><br />
+          In conclusion, while technology offers powerful tools for progress, it
+          is not automatically sustainable. The transition toward advanced and
+          green technologies can harm the environment if production, usage, and
+          disposal are not carefully managed. Recognizing the hidden costs of
+          innovation allows society to move toward more responsible development,
+          focusing not only on technological advancement but also on durability,
+          repairability, and mindful consumption. Newer technologies that are
+          eco-friendly are in the market but are not fully developed to replace
+          the exiting technologies.
+        </p>
+      </article>
+      <!-- AUTHOR -->
+      <aside class="sidebar">
+        <h4>Praful Dhakal</h4>
+        <p>
+          Praful Dhakal (May 2008) is a student at Itahari International
+          College. He has actively contributed to the development of the Ecomart
+          project, where he worked as a Cart Page Developer, focusing on
+          building and improving user-friendly shopping cart functionality. In
+          addition to this project, he has previously been involved in several
+          other web development projects, gaining hands-on experience in
+          designing, developing, and maintaining websites
+        </p>
+        <a href="#">learn more</a>
+      </aside>
+    </main>
+    <!-- FOOTER -->
+
+    <footer>© 2026 EcoMART</footer>
+
+    <script type="module" src="/JS/productpage.js"></script>
+  </body>
+</html>

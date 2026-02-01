@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/components/navbar.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMART Blog</title>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      :root {
+        --bg: #eef6ea;
+        --green: #4b6f44;
+        --dark: #1f2933;
+        --white: #ffffff;
+      }
+
+      header {
+        height: 100px;
+      }
+
+      body {
+        color: var(--dark);
+        background: var(--white);
+      }
+
+      /* SCROLLBAR */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #e8f3e3;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--green);
+        border-radius: 10px;
+      }
+
+
+
+      /* MAIN LAYOUT */
+      .main-blog {
+        margin: 0 auto;
+        padding: 80px 10px 40px 100px;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        gap: 40px;
+      }
+
+      .content {
+        padding-right: 40px;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      .title {
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .divider {
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        margin-top: 100px;
+        margin-bottom: 80px;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 22px;
+      }
+
+      .dropcap::first-letter {
+        font-size: 56px;
+        font-weight: bold;
+        float: left;
+        margin-right: 10px;
+        line-height: 1;
+      }
+
+      h3 {
+        margin: 40px 0 15px;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      /* SIDEBAR */
+      .sidebar h4 {
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      .sidebar p {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: var(--green);
+        font-size: 14px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--green);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 13px;
+      }
+
+      /*  MOBILE (≤600px) */
+
+      @media (max-width: 600px) {
+        .navbar {
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px;
+        }
+
+        nav {
+          justify-content: center;
+          gap: 15px;
+        }
+
+        .main-blog {
+          padding: 30px 20px 60px;
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .content {
+          padding-right: 0;
+          border-right: none;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .dropcap::first-letter {
+          font-size: 42px;
+        }
+      }
+
+      /*  TABLET (≤900px) */
+
+      @media (max-width: 900px) {
+        .main-blog {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          border-right: none;
+          padding-right: 0;
+        }
+      }
+
+      /*  LARGE SCREENS (≥1400px) */
+
+      @media (min-width: 1400px) {
+        .main-blog {
+          max-width: 15s00px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR  -->
+    <header class="site-header">
+        <div id="navbar">
+      <script>
+        fetch("/components/navbar.html")
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById("navbar").innerHTML = html;
+                document.querySelector(".openFilter-button")?.remove();
+                document.querySelector(".search-bar-container")?.remove();
+
+          });
+      </script>
+    </div>
+    </header>
+    <!-- BLOG DETAIL -->
+    <main class="main-blog">
+      <article class="content">
+        <h1 class="title" style="font-size: 40px">
+          Eco-Technology: Innovation Designed Around the Environment
+        </h1>
+        <a href="#" style="text-decoration: none; color: var(--green)">
+          <i>Written by </i></a
+        >
+        <a href="#" style="text-decoration: none; color: #726e6d"
+          ><b>Praful Dhakal</b></a
+        >
+        <div class="divider"></div>
+
+        <img
+          src="https://coruzant.com/wp-content/uploads/2022/05/green-technology-696x464.jpg"
+          alt=""
+          style="
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+          "
+        />
+        <!-- ARTICLE -->
+        <p class="dropcap">
+          Eco-technology means applying technology in a manner that is not
+          harmful to nature. It is concentrated on the creation of tools and
+          systems, which utilize resources in a wise and environment friendly
+          manner. Most of the eco-technologies are already in our day-to-day
+          lives, and perhaps we do not always realize It.
+          <br /><br />
+          Energy use is one of the common fields of eco-technology. In
+          technologies such as the solar panels, wind power and small hydro,
+          natural sources like the sun, wind and running water are used to
+          generate electricity. These systems are used in homes, schools, and
+          offices and can work in both villages and towns.
+          <br /><br />
+          Eco-technology is also useful in the management of natural resources.
+          The use of rainwater collection system, drip irrigation and water
+          storage tanks helps to regulate the way water is gathered and
+          utilized. These are technologies that can be applied in regions where
+          there is scarcity of water and save on unnecessary waste.
+          <br /><br />
+          In farming, eco-technology supports better planning and
+          decision-making. Weather applications, soil analysis and new
+          irrigation techniques enable farmers to know when to plant and the
+          amount of water to apply. This assists in safeguarding land, crop, and
+          the saving of time and energy.
+          <br /><br />
+          The eco-technology in cities and towns is witnessed in infrastructure
+          and building designs. Electricity consumption is minimized by using
+          buildings that are natural lit, well ventilated, and use energy saving
+          materials. Homes can be made more comfortable and more affordable
+          through simple design options.
+          <br /><br />
+          Recycling of the waste materials helps to reduce environment
+          degradation. When a manufacturer launches new version of a product.
+          The older versions are replaced by it. The components of the replaced
+          items can be recycled and used in the manufacturing. This encourages
+          minimal mining.
+          <br /><br />
+          Waste management is also conducted using eco-technology. Household and
+          community waste is controlled by way of waste sorting systems,
+          recycling tools and composting tools. These mechanisms aim at managing
+          waste in a proper manner rather than throwing everything in a single
+          location.
+          <br /><br />
+          Another field of application of eco-technology is transportation. EVP,
+          ride sharing, and transportation control applications ensure to plan
+          travel and lessen the fuel consumption. These technologies facilitate
+          ease and efficiency in day to day travel.
+          <br /><br />
+          Monitoring and information sharing is the other significant component
+          of eco-technology. Environmental sensors include air quality sensors,
+          weather tracking systems, and mapping systems that capture information
+          concerning the environment. The information aids the individual,
+          society and planners to have a better idea of the environmental
+          status.
+          <br /><br />
+          To sum up, eco-technology is concerned with balance. It is a blend of
+          the contemporary technology and the sensitivity to nature and local
+          requirements. Through simple and practical eco-technologies within the
+          daily lives of the communities, they can strive to pass to a more
+          comfortable future that would be environmentally conscious.
+        </p>
+      </article>
+      <!-- AUTHOR -->
+      <aside class="sidebar">
+        <h4>Praful Dhakal</h4>
+        <p>
+          Praful Dhakal (May 2008) is a student at Itahari International
+          College. He has actively contributed to the development of the Ecomart
+          project, where he worked as a Cart Page Developer, focusing on
+          building and improving user-friendly shopping cart functionality. In
+          addition to this project, he has previously been involved in several
+          other web development projects, gaining hands-on experience in
+          designing, developing, and maintaining websites
+        </p>
+        <a href="#">learn more</a>
+      </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>© 2026 EcoMART</footer>
+
+    <script type="module" src="/JS/productpage.js"></script>
+  </body>
+</html>

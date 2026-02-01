@@ -1,0 +1,326 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin-top: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --green: #4b6f44;
+  --dark: #1f2933;
+  --white: #ffffff;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  background: var(--white);
+  color: var(--dark);
+}
+
+/*  CUSTOM SCROLLBAR  */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e8f3e3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b6f44;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a5a35;
+}
+
+/* =========================
+   MAIN GRID LAYOUT
+========================= */
+
+.site-header {
+  height: 100px;
+}
+
+.blog {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas:
+    "left main right"
+    "left main right"
+    "bottom bottom bottom";
+  gap: 0;
+
+  max-width: 1500px;
+
+  width: 100%;
+}
+
+/* =========================
+   GRID AREAS
+========================= */
+.blog-left {
+  grid-area: left;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.blog-main {
+  grid-area: main;
+}
+
+.blog-right {
+  grid-area: right;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.blog-bottom {
+  grid-area: bottom;
+
+  padding: 0px;
+  text-align: center;
+}
+
+/* =========================
+   CARD BASE (BOXED STYLE)
+========================= */
+.card {
+  background: var(--white);
+  color: var(--dark);
+  text-decoration: none;
+  padding: 20px;
+  border: #1f2933 1px solid;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+   LEFT COLUMN (4 SMALL)
+========================= */
+.card.small {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card.small .card-text {
+  width: 70%;
+}
+
+.card.small img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-left: auto;
+}
+
+/* =========================
+   CENTER MAIN CARD
+========================= */
+.card.main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 600px;
+}
+
+.card.main img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* =========================
+   RIGHT COLUMN (2 MEDIUM)
+========================= */
+.card.medium {
+  display: grid;
+}
+
+.card.medium img {
+  border-radius: 8px;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.card.wide {
+  display: block;
+  width: 100%;
+  min-height: 140px;
+  text-decoration: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--green);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  /* =========================
+       NAVBAR (STACKED + SAFE)
+    ========================= */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* =========================
+       GRID → SINGLE COLUMN
+    ========================= */
+  .blog {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "left"
+      "right"
+      "bottom";
+    width: 100%;
+  }
+
+  /* =========================
+       MAIN CARD FIX
+    ========================= */
+  .blog-main {
+    width: 100%;
+  }
+
+  .card.main {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .card.main img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+  }
+
+  .card.main h2 {
+    font-size: 18px;
+  }
+
+  .card.main p {
+    font-size: 14px;
+  }
+
+  /* =========================
+       LEFT SMALL CARDS
+    ========================= */
+  .blog-left {
+    grid-template-rows: auto;
+  }
+
+  .card.small {
+    height: auto;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .card.small img {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* =========================
+       RIGHT MEDIUM CARDS
+    ========================= */
+  .blog-right {
+    grid-template-rows: auto;
+  }
+
+  .card.medium img {
+    height: 160px;
+  }
+
+  /* =========================
+       BOTTOM CARD
+    ========================= */
+  .blog-bottom {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 20px 40px;
+  }
+
+  .blog {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "main main"
+      "left right"
+      "bottom bottom";
+  }
+
+  .blog-left,
+  .blog-right {
+    grid-template-rows: auto;
+  }
+
+  .card.main img {
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .blog {
+    max-width: 1800px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .navbar {
+    padding: 30px 80px;
+  }
+
+  .card.main {
+    min-height: 700px;
+  }
+
+  .card.main img {
+    max-height: 550px;
+  }
+}

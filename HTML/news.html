@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/components/navbar.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoMART Blog</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    :root {
+      --bg: #eef6ea;
+      --green: #4b6f44;
+      --dark: #1f2933;
+      --white: #ffffff;
+    }
+
+    header {
+      height: 100px;
+    }
+
+    body {
+      color: var(--dark);
+      background: var(--white);
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #e8f3e3;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--green);
+      border-radius: 10px;
+    }
+
+    /* MAIN LAYOUT */
+    .main-blog {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 80px 10px 40px 100px;
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      gap: 40px;
+    }
+
+    .content {
+      padding-right: 40px;
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .divider {
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      margin-top: 100px;
+      margin-bottom: 80px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .dropcap::first-letter {
+      font-size: 56px;
+      font-weight: bold;
+      float: left;
+      margin-right: 10px;
+      line-height: 1;
+    }
+
+    h3 {
+      margin: 40px 0 15px;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    /* IMAGE BOX */
+    .image-box {
+      margin: 40px 0;
+      max-width: 100%;
+      border: 8px solid #000;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* SIDEBAR */
+    .sidebar h4 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .sidebar p {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: var(--green);
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+    }
+
+    /*  MOBILE (≤600px) */
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .main-blog {
+        padding: 30px 20px 60px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .content {
+        padding-right: 0;
+        border-right: none;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .dropcap::first-letter {
+        font-size: 42px;
+      }
+    }
+
+    /*  TABLET (≤900px) */
+
+    @media (max-width: 900px) {
+      .main-blog {
+        grid-template-columns: 1fr;
+      }
+
+      .content {
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+
+    /* LARGE SCREENS (≥1400px) */
+
+    @media (min-width: 1400px) {
+      .main-blog {
+        max-width: 1500px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR  -->
+  <header class="site-header">
+    <div id="navbar">
+      <script>
+        fetch("/components/navbar.html")
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById("navbar").innerHTML = html;
+            document.querySelector(".openFilter-button")?.remove();
+            document.querySelector(".search-bar-container")?.remove();
+          });
+      </script>
+    </div>
+  </header>
+  <!-- BLOG DETAIL -->
+  <main class="main-blog">
+    <article class="content">
+      <h1 class="title" style="font-size: 40px">
+        UK to join major wind farm project with nine European countries
+      </h1>
+      <a href="#" style="text-decoration: none; color: var(--green)">
+        <i>Written by </i></a>
+      <a href="#" style="text-decoration: none; color: #726e6d"><b>Justin Rowlatt</b></a>
+      <div class="divider"></div>
+
+      <img src="https://i.pinimg.com/736x/6e/b9/f6/6eb9f66e4e56b21da92076e31cd41142.jpg" alt="windmill image"
+        style="width: 100%; height: auto; margin-bottom: 50px" />
+      <!-- ARTICLE -->
+      <p class="dropcap">
+        The UK is set to back a vast new fleet of offshore wind projects in
+        the North Sea alongside nine other European countries including
+        Norway, Germany and the Netherlands. <br /><br />
+        The government says the deal will strengthen energy security by
+        offering an escape from what it calls the "fossil fuel rollercoaster".
+        <br /><br />
+        For the first time, some of the new wind farms will be linked to
+        multiple countries through undersea cables known as interconnectors,
+        which supporters say should lower prices across the region.
+        <br /><br />
+        But it could prove controversial as wind farm operators would be able
+        to shop around between countries to sell power to the highest bidder -
+        potentially driving up electricity prices when supply is tight.
+        <br /><br />
+        Energy Secretary Ed Miliband will sign a declaration on Monday at a
+        meeting on the future of the North Sea in the German city of Hamburg,
+        committing to complete the scheme by 2050.
+        <br /><br />
+        Jane Cooper, deputy CEO of industry body RenewableUK, said the deal
+        would "drive down costs for billpayers" as well as increasing "the
+        energy security of the UK and the whole of the North Sea region
+        significantly".
+        <br /><br />
+        But Claire Countinho, shadow energy secretary, warned "we cannot
+        escape the fact that the rush to build wind farms at breakneck speed
+        is pushing up everybody's energy bills."
+      </p>
+      <figure style="margin-bottom: 50px">
+        <img
+          src="https://static.scientificamerican.com/sciam/cache/file/082FA221-3615-4651-8A95D2AFF63FD962_source.jpg?w=900"
+          alt="windmill image" style="
+              width: 70%;
+              height: auto;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            " />
+        <figcaption style="text-align: center; font-size: 14px; color: #555">
+          Offshore wind farms in the North Sea
+        </figcaption>
+      </figure>
+      <p>
+        A network of undersea cables already connect the electricity grids of
+        European countries - the UK has 10 such cables - but connecting wind
+        farms directly to multiple countries will be a first.
+        <br /><br />
+        Most energy economists agree more connections between the UK and other
+        European grids should reduce costs and improve the security of supply.
+        <br /><br />
+        The UK National Grid published a paper earlier this month suggesting
+        such an arrangement could cut so-called constraint payments, made when
+        wind farms are asked not to generate power because the electricity
+        network is too congested.
+        <br /><br />
+        A separate report said UK consumers had enjoyed savings of £1.6bn from
+        the nine existing undersea cables linking the UK with Europe since
+        2023.
+        <br /><br />
+        National Grid said the cables help smooth spikes in prices because,
+        thanks to time zone differences, surplus energy generated off-peak
+        elsewhere can be sold cheaply to the UK.
+        <br /><br />
+        But interconnectors have proved controversial in Norway where there
+        have been concerns that selling power to foreign countries could
+        reduce supplies for Norwegian customers and therefore increase the
+        price they pay.
+        <br /><br />
+        To stop this happening, the government brought in new rules to
+        restrict electricity exports when domestic supply could be at risk.
+        <br /><br />
+        Norway also refused permission for a new interconnector to Scotland.
+        <br /><br />
+        UK secures record supply of offshore wind projects
+        <br /><br />
+        Nato and the European Commission are also taking part in the summit,
+        which is expected to include pledges to strengthen security for
+        offshore energy infrastructure amid rising concerns over sabotage and
+        unsafe maritime activity.
+        <br /><br />
+        The agreement underlines Europe's continued commitment to wind power,
+        despite renewed criticism from US President Donald Trump, who again
+        attacked what he called "windmills" during a speech at the World
+        Economic Forum in Davos.
+        <br /><br />
+        The North Sea countries pledged to develop 300 gigawatts (GW) of
+        offshore wind capacity three years ago. This new deal means 100GW of
+        the total will be built jointly. It is expected to say 20GW of that
+        should be under way by 2030.
+        <br /><br />
+        China currently leads the world in offshore wind, with 43GW of the
+        world's 83GW of installed capacity, according to a report last year
+        from industry body RenewableUK.
+        <br /><br />
+        The UK ranks second, with almost 16GW already in operation. The UK
+        government has awarded contracts for a further 20GW, including 8.4GW
+        agreed in a record-breaking bidding round earlier this month.
+        <br /><br />
+        The government was criticised by the Conservatives for "locking in"
+        high offshore wind prices.
+        <br /><br />
+        Reform has also repeatedly attacked the cost of net zero, but the Lib
+        Dems and Greens both support the expansion of renewables to tackle the
+        threat of climate change and boost green jobs.
+        <br /><br />
+        SNP and Plaid Cymru also support the growth of offshore wind, but
+        argue Scotland and Wales should have control of their energy
+        resources. Additional reporting by Miho Tanaka.
+      </p>
+    </article>
+    <!-- AUTHOR -->
+    <aside class="sidebar">
+      <h4>Justin Rowlatt</h4>
+      <p>
+        Justin Rowlatt (born June 1966) is a British journalist, news reporter
+        and television presenter who is currently working as Climate Editor
+        for BBC News. He has previously been the BBC's South Asia
+        Correspondent, based in Delhi and also its chief environment
+        correspondent.
+      </p>
+      <a href="https://en.wikipedia.org/wiki/Justin_Rowlatt">learn more</a>
+    </aside>
+  </main>
+  <!-- FOOTER -->
+  <footer>© 2026 EcoMART</footer>
+  <script type="module" src="/JS/productpage.js"></script>
+</body>
+
+</html>
