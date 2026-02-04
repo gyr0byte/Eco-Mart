@@ -393,7 +393,7 @@ We want to extend our heartfelt gratitude to everyone who has been part of this 
 
 **To Future Developers:** We hope this project serves as a helpful resource for your learning journey. May it inspire you to build projects that not only showcase your skills but also contribute to meaningful causes.
 
-**To Our Planet:** This entire project is dedicated to you. While Eco-Mart may be digital, its purpose is real - to promote awareness and action toward sustainability. Every line of code was written with the hope of contributing, even in a small way, to a greener, healthier Earth.
+**To Our Planet:** This entire project is dedicated to you. While Eco-Mart may be digital, its purpose is real - to promote awareness and action toward sustainability. Every line of code was written with the hope of contributing, even in a small way to a greener, healthier Earth.
 
 ---
 
