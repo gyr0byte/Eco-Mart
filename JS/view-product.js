@@ -6,7 +6,6 @@ function parsePrice(str) {
   const num = String(str).replace(/[^0-9.]+/g, "");
   return num ? Number(num) : null;
 }
-
 function populateProductPage(data) {
   const titleEl = document.querySelector(".product-title");
   const nowEl = document.querySelector(".now");
