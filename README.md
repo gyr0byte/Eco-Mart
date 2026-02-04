@@ -401,7 +401,7 @@ We want to extend our heartfelt gratitude to everyone who has been part of this 
 
 Building Eco-Mart has been an incredible learning experience. It taught us not just about web development, but about the importance of purposeful coding - creating technology that serves a greater good.
 
-We may have completed our academic requirements, but the mission of promoting sustainable living continues. Whether you're here to learn, contribute, or simply explore, you're now part of the Eco-Mart community, and for that, **we are truly grateful**.
+We may have completed our academic requirements, but the mission of promoting sustainable living continues. Whether you're here to learn, contribute, or simply explore, you're now part of the Eco-Mart community and for that, **we are truly grateful**.
 
 Thank you for believing in sustainable living. Thank you for supporting open source. Thank you for being here.
 
