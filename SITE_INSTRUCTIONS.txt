@@ -1,0 +1,28 @@
+Eco-Mart Site Instructions
+
+1) Open the site
+- Start with HTML/index.html in a browser.
+- For other pages, open the desired file in HTML/.
+
+2) Navigation
+- Use the top navbar to move between pages.
+- Some pages link to product and research content.
+
+3) Product pages
+- Product listing: HTML/productPage.html
+- View product: HTML/view-product-page.html
+- Cart page: HTML/cartPage.html
+
+4) Login
+- Login page: HTML/loginPage.html
+- Client-side validation is handled in JS/loginValidation.js.
+
+5) Assets
+- Stylesheets live in CSS/.
+- Scripts live in JS/.
+- Reusable navbar lives in components/.
+- Images live in images/ and fonts in fonts/.
+
+6) Notes
+- This is a static site; no backend is required.
+- If a page looks unstyled, confirm its CSS file is linked correctly.
